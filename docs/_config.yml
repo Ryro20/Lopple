@@ -1,0 +1,5 @@
+title: Lopple
+description: Mi sitio web con Jekyll y GitHub Pages
+baseurl: "/Lopple"          # Si usas repo en https://github.com/usuario/Lopple
+url: "https://ryro20.github.io"
+theme: minima               # Puedes cambiar el tema o definir el tuyo propio

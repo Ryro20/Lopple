@@ -1,0 +1,22 @@
+# Ignorar archivo con token sensible
+claves.py
+constantes_pull.py
+
+# Ignorar archivos zip
+*.zip
+
+# Ignorar carpetas pycache y archivos compilados de Python
+__pycache__/
+*.pyc
+
+# Ignorar entornos virtuales
+venv/
+.env/
+
+# Ignorar archivos de sistema macOS y Windows
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de logs y temporales
+*.log
+*.tmp
