@@ -10,12 +10,34 @@ body {
 
 .sidebar {
   width: 220px;
-  background-color: #1a1a1a;
-  padding: 20px;
   position: fixed;
-  height: 100vh;
+  height: 100%;
+  background: #111;
+  padding: 20px;
   overflow-y: auto;
+  transition: transform 0.3s ease;
   border-right: 1px solid #333;
+  transform: translateX(0); /* Mostrar por defecto en pantallas grandes */
+}
+
+/* Sidebar oculta en móvil */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); /* Oculta el menú por defecto */
+  }
+
+  .sidebar.visible {
+    transform: translateX(0); /* Lo muestra cuando tiene la clase visible */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main {
+    margin-left: 0 !important;
+    padding-top: 60px;
+  }
 }
 
 .sidebar h1 {
@@ -94,32 +116,3 @@ html {
   color: white;
 }
 
-/* Sidebar por defecto */
-.sidebar {
-  width: 220px;
-  position: fixed;
-  height: 100%;
-  background: #111;
-  padding: 20px;
-  transition: transform 0.3s ease;
-}
-
-/* Sidebar oculta en móvil */
-@media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-
-  .sidebar.visible {
-    transform: translateX(0);
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .main {
-    margin-left: 0 !important;
-    padding-top: 60px;
-  }
-}
