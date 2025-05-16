@@ -23,17 +23,78 @@
 
     <section id="comandos">
       <h2>Comandos disponibles</h2>
-      <ul>
-        <li><code>/purgeall</code> - Limpia todos los mensajes.</li>
-        <li><code>/delete_registers</code> - Elimina registros guardados.</li>
-        <li><code>/change_extrapulls</code> - Modifica los extra pulls permitidos.</li>
-        <li><code>/round_pull</code> - Ejecuta un round pull con parámetros configurables.</li>
-        <li><code>/extra_pull</code> - Realiza un extra pull individual.</li>
-        <li><code>/test_pull</code> - Realiza un pull de prueba.</li>
-        <li><code>/register_team</code> - Registra un nuevo equipo.</li>
-        <li><code>/edit_registered_teams</code> - Edita la lista de equipos registrados.</li>
-        <li><code>/add_member_team</code> - Añade un miembro a un equipo registrado.</li>
-      </ul>
+      <div class="comando">
+        <h3><code>/purgeall</code></h3>
+        <p>Elimina todos los mensajes del canal actual. Solo los usuarios con permisos adecuados pueden utilizarlo.</p>
+        <ul>
+          <li><strong>Uso:</strong> <code>/purgeall</code></li>
+          <li><strong>Permisos necesarios:</strong> Administrador o Gestionar mensajes</li>
+        </ul>
+      </div>
+      <div class="comando">
+        <h3><code>/delete_registers</code></h3>
+        <p>Elimina todos los registros guardados previamente por el bot.</p>
+        <ul>
+          <li><strong>Uso:</strong> <code>/delete_registers</code></li>
+          <li><strong>Permisos necesarios:</strong> Administrador</li>
+        </ul>
+      </div>
+      <div class="comando">
+        <h3><code>/change_extrapulls</code></h3>
+        <p>Modifica el número de extra pulls disponibles para un equipo o usuario.</p>
+        <ul>
+          <li><strong>Uso:</strong> <code>/change_extrapulls cantidad: 5</code></li>
+          <li><strong>Permisos necesarios:</strong> Administrador</li>
+        </ul>
+      </div>
+      <div class="comando">
+        <h3><code>/round_pull</code></h3>
+        <p>Ejecuta una ronda de pulls para todos los equipos registrados.</p>
+        <ul>
+          <li><strong>Uso:</strong> <code>/round_pull</code></li>
+          <li><strong>Permisos necesarios:</strong> Administrador</li>
+        </ul>
+      </div>
+      <div class="comando">
+        <h3><code>/extra_pull</code></h3>
+        <p>Realiza un pull adicional para un equipo que tenga extra pulls disponibles.</p>
+        <ul>
+          <li><strong>Uso:</strong> <code>/extra_pull equipo: Nombre</code></li>
+          <li><strong>Permisos necesarios:</strong> Administrador</li>
+        </ul>
+      </div>
+      <div class="comando">
+        <h3><code>/test_pull</code></h3>
+        <p>Realiza un pull de prueba para simular resultados sin afectar los registros.</p>
+        <ul>
+          <li><strong>Uso:</strong> <code>/test_pull</code></li>
+          <li><strong>Permisos necesarios:</strong> Cualquiera</li>
+        </ul>
+      </div>
+      <div class="comando">
+        <h3><code>/register_team</code></h3>
+        <p>Registra un nuevo equipo en el sistema del bot.</p>
+        <ul>
+          <li><strong>Uso:</strong> <code>/register_team nombre: "Nombre del equipo"</code></li>
+          <li><strong>Permisos necesarios:</strong> Administrador</li>
+        </ul>
+      </div>
+      <div class="comando">
+        <h3><code>/edit_registered_teams</code></h3>
+        <p>Edita la información de los equipos ya registrados.</p>
+        <ul>
+          <li><strong>Uso:</strong> <code>/edit_registered_teams equipo: "Nombre" campo: "valor nuevo"</code></li>
+          <li><strong>Permisos necesarios:</strong> Administrador</li>
+        </ul>
+      </div>
+      <div class="comando">
+        <h3><code>/add_member_team</code></h3>
+        <p>Añade un nuevo miembro a un equipo ya registrado.</p>
+        <ul>
+          <li><strong>Uso:</strong> <code>/add_member_team equipo: "Nombre" usuario: @usuario</code></li>
+          <li><strong>Permisos necesarios:</strong> Administrador</li>
+        </ul>
+      </div>
     </section>
 
     <section id="acerca">
