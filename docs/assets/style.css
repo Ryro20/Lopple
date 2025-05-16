@@ -76,3 +76,50 @@ img {
   border-radius: 10px;
   margin-top: 10px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Botón del menú hamburguesa */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* Sidebar por defecto */
+.sidebar {
+  width: 220px;
+  position: fixed;
+  height: 100%;
+  background: #111;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Sidebar oculta en móvil */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.visible {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main {
+    margin-left: 0 !important;
+    padding-top: 60px;
+  }
+}
