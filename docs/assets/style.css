@@ -1,5 +1,3 @@
-/* assets/style.css */
-
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -10,34 +8,19 @@ body {
 
 .sidebar {
   width: 220px;
+  background-color: #1a1a1a;
+  padding: 20px;
   position: fixed;
   height: 100%;
-  background: #111;
-  padding: 20px;
   overflow-y: auto;
-  transition: transform 0.3s ease;
   border-right: 1px solid #333;
-  transform: translateX(0); /* Mostrar por defecto en pantallas grandes */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
-/* Sidebar oculta en móvil */
-@media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%); /* Oculta el menú por defecto */
-  }
-
-  .sidebar.visible {
-    transform: translateX(0); /* Lo muestra cuando tiene la clase visible */
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .main {
-    margin-left: 0 !important;
-    padding-top: 60px;
-  }
+.sidebar.visible {
+  transform: translateX(0);
 }
 
 .sidebar h1 {
@@ -58,10 +41,28 @@ body {
   color: #FF007A;
 }
 
+.menu-toggle {
+  display: block;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 .main {
-  margin-left: 240px;
+  margin-left: 0;
   padding: 40px;
   max-width: 900px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.visible ~ .main {
+  margin-left: 240px;
 }
 
 h2 {
@@ -102,17 +103,3 @@ img {
 html {
   scroll-behavior: smooth;
 }
-
-/* Botón del menú hamburguesa */
-.menu-toggle {
-  display: none;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 1001;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: white;
-}
-
