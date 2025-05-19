@@ -2,25 +2,30 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
-  <header>
-    <h1>{{ site.title }}</h1>
-    <nav>
-      <a href="{{ '/' | relative_url }}">Inicio</a> |
-      <a href="{{ '/about.html' | relative_url }}">About</a>
-    </nav>
-  </header>
 
-  <main>
+  {% include button_sidebar.html %}
+
+  <div class="sidebar" id="sidebar">
+    {% include sidebar.html %}
+  </div>
+
+  <!-- Contenido principal -->
+  <main class="main">
     {{ content }}
   </main>
 
   <footer>
-    <p>© 2025 Lopple</p>
+    <p>&copy; 2025 Lopple Bot. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- Script externo para toggle -->
+  <script src="{{ '/utils/js/sidebar.js' | relative_url }}"></script>
+  <script src="{{ '/utils/js/find_commands.js' | relative_url }}"></script>
+
 </body>
 </html>

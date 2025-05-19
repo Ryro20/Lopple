@@ -1,0 +1,27 @@
+/* ============================
+   IMAGENES POR DEFECTO
+=============================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* ============================
+   CONJUNTO DE IMÁGENES DE LAS 3 BADGES
+=============================== */
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Opcional, para que se adapte en móviles */
+}
+
+.image-row img {
+  width: 325px;
+  height: auto;
+  border-radius: 10px;
+}

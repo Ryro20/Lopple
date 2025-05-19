@@ -1,0 +1,13 @@
+footer {
+  margin-left: calc(var(--sidebar-width) + var(--sidebar-margin-left));
+  margin-right: var(--sidebar-margin-right);
+  padding: 20px;
+  background-color: #111;
+  color: #aaa;
+  text-align: center;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.hidden ~ footer {
+  margin-left: var(--sidebar-margin-left);
+}

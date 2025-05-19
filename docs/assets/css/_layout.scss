@@ -1,0 +1,13 @@
+main.main {
+  flex: 1;
+  margin-left: calc(var(--sidebar-width) + var(--sidebar-margin-left));
+  margin-right: var(--sidebar-margin-right);
+  padding: 40px 20px;
+  transition: margin-left 0.3s ease;
+  box-sizing: border-box;
+}
+
+.sidebar.hidden ~ .main {
+  margin-left: var(--sidebar-margin-right);
+  padding: 40px 20px;
+}

@@ -1,11 +1,12 @@
-# Ignorar archivo con token sensible
+# Ignorar archivo con tokens e IDs sensibles
 claves.py
 constantes_pull.py
 
 # Ignorar archivos zip
 *.zip
 
-# Ignorar carpetas pycache y archivos compilados de Python
+# Ignorar carpetas , pycache y archivos compilados de Python
+_site
 __pycache__/
 *.pyc
 
