@@ -56,31 +56,53 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function scrollToTopSmooth() {
-  return new Promise((resolve) => {
-    const checkInterval = 20;
-    const timeout = 1000;
-    let elapsed = 0;
+    return new Promise((resolve) => {
+      const checkInterval = 20;
+      const timeout = 1000;
+      let elapsed = 0;
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    const intervalId = setInterval(() => {
-      if (window.scrollY === 0) {
-        clearInterval(intervalId);
-        resolve();
-      } else if (elapsed >= timeout) {
-        clearInterval(intervalId);
-        resolve();
-      }
-      elapsed += checkInterval;
-    }, checkInterval);
-  });
-}
+      const intervalId = setInterval(() => {
+        if (window.scrollY === 0) {
+          clearInterval(intervalId);
+          resolve();
+        } else if (elapsed >= timeout) {
+          clearInterval(intervalId);
+          resolve();
+        }
+        elapsed += checkInterval;
+      }, checkInterval);
+    });
+  }
+
+  function blockScroll() {
+    window.addEventListener('wheel', preventScroll, { passive: false });
+    window.addEventListener('touchmove', preventScroll, { passive: false });
+    window.addEventListener('keydown', preventArrowScroll, false);
+  }
+
+  function unblockScroll() {
+    window.removeEventListener('wheel', preventScroll);
+    window.removeEventListener('touchmove', preventScroll);
+    window.removeEventListener('keydown', preventArrowScroll);
+  }
+
+  function preventScroll(e) {
+    e.preventDefault();
+  }
+
+  function preventArrowScroll(e) {
+    const keys = ['ArrowUp', 'ArrowDown', 'Space', 'PageUp', 'PageDown'];
+    if (keys.includes(e.code)) {
+      e.preventDefault();
+    }
+  }
 
   document.body.classList.add('fade-out');
 
   let currentHash = window.location.hash ? window.location.hash.substring(1) : null;
   if (currentHash) {
-
     history.replaceState(null, '', window.location.pathname);
   }
 
@@ -94,6 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollToHash(hashToScroll);
       sessionStorage.removeItem('scrollToAnchor');
     }
+
+    unblockScroll();
   }, 50);
 
   document.body.addEventListener('click', async (e) => {
@@ -121,17 +145,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let targetPageFile = getPageFileName(url.pathname);
     let currentPageFile = getPageFileName(window.location.pathname);
 
-
     if (targetPageFile !== currentPageFile && targetHash) {
       e.preventDefault();
+
+      blockScroll();
 
       await fadeOut();
       await scrollToTopSmooth();
 
-
       sessionStorage.setItem('scrollToAnchor', targetHash);
-
-
       window.location.href = targetPage;
       return;
     }
@@ -140,6 +162,5 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       scrollToHash(targetHash);
     }
-
   });
 });
