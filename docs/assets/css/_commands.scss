@@ -48,7 +48,6 @@
   margin-right: 20px; /* Espacio entre texto y botón */
 }
 
-
 .comandos-toggle {
   transform: rotate(-90deg);
   background: none;
@@ -78,12 +77,14 @@
 }
 
 .subcomandos-list.visible {
+
   max-height: 2000px; /* o lo suficientemente grande */
   opacity: 1;
   overflow: visible;
 }
 
 .subcomandos-list li {
+
   display: block;
   opacity: 1;
   margin: 0;
@@ -92,6 +93,7 @@
 
 /* Estilo de los elementos de la lista */
 .subcomandos-list li a {
+  font-size: 0.9rem;
   color: #ccc;
   text-decoration: none;
   display: block;

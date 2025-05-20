@@ -1,3 +1,15 @@
+html, body {
+  overflow-anchor: none;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -6,8 +18,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
+
+
