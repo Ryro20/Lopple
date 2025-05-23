@@ -1,11 +1,102 @@
 footer {
   margin-left: calc(var(--sidebar-width) + var(--sidebar-margin-left));
   margin-right: var(--sidebar-margin-right);
-  padding: 20px;
-  background-color: #111;
-  color: #aaa;
+  background-color: #121212;
+  color: #bbb;
+  font-size: 0.9rem;
+  padding: 10px 15px;
+  border-top: 2px solid #4b004a;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
   text-align: center;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.8s ease;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;  // Evita que los elementos se apilen
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+
+  nav[aria-label="Enlaces del pie de página"] {
+    flex: 2 1 auto;
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 15px;
+
+      li {
+        a {
+          color: #bb3399;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover,
+          &:focus {
+            color: #ff00aa;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+
+  .legal {
+    flex: 1 1 auto;
+    font-size: 0.8rem;
+    color: #666;
+    margin-left: 10px;
+
+    a {
+      color: #888;
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        color: #bb3399;
+        outline: none;
+      }
+    }
+  }
+
+  small {
+    flex-shrink: 0;
+    margin-left: 10px;
+    color: #777;
+    font-size: 0.8rem;
+    user-select: none;
+  }
+
+  @media (max-width: 600px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav[aria-label="Enlaces del pie de página"],
+    .legal,
+    small {
+      margin-left: 0;
+      text-align: center;
+      flex: none;
+      width: 100%;
+    }
+
+    .footer-links {
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
 }
 
 .sidebar.hidden ~ footer {

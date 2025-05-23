@@ -1,41 +1,262 @@
-/* ============================
-   SIDEBAR
-=============================== */
+$bar-width: 35px;
+$bar-height: 4px;
+$bar-gap: 13px;
 
-.sidebar {
-  width: var(--sidebar-width);
-  background-color: #1e1e1e;
-  padding: 30px;
-  box-sizing: border-box;
+.custom-toggle {
   position: fixed;
-  height: 100vh;
-  overflow-y: auto;
-  border-right: 5px solid #333;
-  transform: translateX(0);
-  transition: transform 0.3s ease;
-  z-index: 1000;
+  top: 25px;
+  left: var(--toggle-visible);
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1100;
+  transition: left 0.7s ease;
+  outline: none;
+
+
+  &.closed {
+    left: var(--toggle-hidden);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    background: hsl(0, 0%, 0%);
+    transition: opacity 1s ease;
+  }
+
+  &.open::before {
+    opacity:0.25;
+  }
+
+  span {
+    position: absolute;
+    width: #{$bar-width};
+    height: #{$bar-height};
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 6px 1px rgba(75, 75, 75, 0.8);
+    left: calc((100% - #{$bar-width}) / 2);      
+  }
+
+  span:nth-child(1) { top: calc(50% - #{$bar-gap} - #{$bar-height} / 2); }
+  span:nth-child(2) { top: calc(50% - #{$bar-height} / 2); }
+  span:nth-child(3) { top: calc(50% + #{$bar-gap} - #{$bar-height} / 2); }
+
+
+  &.open {
+    span {
+      box-shadow: 0 0 6px 1px rgba(150, 0, 70, 0.8);
+    }
+    span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 18px;
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 18px;
+    }
+
+  }
+
+  &:hover span {
+    background-color: rgba(255, 0, 122, 0.8);
+    box-shadow: 0 0 6px 5px rgb(80, 0, 40);
+  }
+
+  &.open:hover span {
+    background-color: rgba(80, 0, 40, 0.3);
+    box-shadow: 0 0 8px 6px rgba(255, 0, 122, 0.5);
+  }
 }
 
+
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  box-sizing: border-box;
+  border-right: 5px solid #333;
+  z-index: 1000;
+  transform: translateX(0);
+  transition: transform 0.7s ease;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+}
+
+// Sidebar oculta
 .sidebar.hidden {
   transform: translateX(-100%);
 }
 
-.sidebar .menu-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-}
-
-.sidebar .logo {
-  margin-top: 50px;
+/* No modificar */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-size: 24px;
   color: #FF007A;
+
+  margin-top:-20px;
+  padding: 1rem 2rem;
+  width: fit-content;      // Hace que el ancho se ajuste al contenido
+  border-bottom: 2px solid rgba(255, 0, 122, 0.2);
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.sidebar .nav-links a {
+.logo-icon {
+  margin-top: 4px;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Contenedor principal scrollable (contenido que va encima del selector) */
+.scrollable {
+  flex-grow: 1;        /* Ocupa todo el espacio restante */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 5px;
+  margin-bottom: 1rem;
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+}
+
+/* Selector de idioma con animación */
+.custom-language-selector {
+  flex-shrink: 0;       /* No reduce tamaño */
+  padding: 1rem 0rem;
+  border-top: 2px solid rgba(255, 0, 122, 0.2);
+  font-size: 0.9rem;
+  background-color: #1e1e1e;
+  z-index: 1100;
+  position: relative;   /* Para posicionar el desplegable */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;     /* Sin margen negativo para no solapar */
+
+  .selector-toggle {
+    width: 100%;
+    background-color: #2a2a2a;
+    border: 1px solid #ff007a;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem 0.5rem 0.8rem;
+    color: #ff007a;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.5s ease, color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: #3a003a;
+      color: #fff;
+      border-color: #ff3399;
+    }
+
+    .arrow {
+      width: 12px;
+      height: 8px;
+      fill: currentColor;
+      transition: transform 0.3s ease;
+      transform: rotate(-90deg); /* Por defecto: derecha */
+    }
+
+    &[aria-expanded="true"] .arrow {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .selector-options {
+    position: absolute;
+    bottom: 100%;   /* Aparece justo encima del selector */
+    left: 0;
+    width: 100%;
+    background-color: #2a2a2a;
+    border: 1px solid #ff007a;
+    border-radius: 6px;
+    list-style: none;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow-y: auto;
+    pointer-events: none;
+    box-sizing: border-box;
+    z-index: 2000;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    will-change: max-height, opacity, transform;
+    transition:
+      max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: bottom center;
+    transform: translateY(20px) scaleY(0.8);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.open {
+      max-height: 800px;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scaleY(1);
+    }
+
+    li {
+      padding: 0.6rem 1.5rem;
+      cursor: pointer;
+      color: #ff007a;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #3a003a;
+        color: #fff;
+      }
+
+      .lang-entry {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+    }
+  }
+}
+
+.nav-links a {
   display: block;
   color: #ccc;
   text-decoration: none;
@@ -45,9 +266,74 @@
   transition: background 0.3s, color 0.3s;
 }
 
-.sidebar .nav-links a:hover {
+.nav-links a:hover {
   background-color: #333;
   color: #FF007A;
 }
 
+.submenu-container {
+  display: flex;
+  flex-direction: column;
+}
 
+.submenu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -5px;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.submenu-text {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.submenu-toggle {
+  transform: rotate(-90deg);
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.8s ease;
+}
+
+.submenu-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 1rem;
+  max-height: 0;
+  overflow: hidden; 
+  opacity: 0;
+  transition: max-height 0.8s ease-in-out, opacity 1s ease-in-out;
+  display: block;
+}
+
+.submenu-list.visible {
+  max-height: 2000px;
+  opacity: 1;
+  overflow: visible;
+}
+
+.submenu-list li {
+  display: block;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu-list li a {
+  font-size: 0.9rem;
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0.25;
+  transition: color 0.2s;
+}
+
+.submenu-list li a:hover {
+  color: #fff;
+}

@@ -4,29 +4,83 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} - {{ site.title }}</title>
+
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="https://ryro20.github.io/Lopple/assets/favicon.png" type="image/png">
+
+  <!-- SEO básico -->
+  <meta name="description" content="Lopple es el bot oficial de torneos Splatoon, automatiza resultados, organiza equipos y potencia la experiencia competitiva.">
+  <meta name="keywords" content="Lopple, bot Discord, Splatoon, torneos, automatización, competitivo, Ryro, Neus">
+  <meta name="author" content="Ryro">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ page.title | default: 'Lopple - Bot oficial de torneos de Splatoon' }}">
+  <meta property="og:description" content="Gestiona torneos, automatiza resultados y organiza equipos con Lopple.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryro20.github.io/Lopple/">
+  <meta property="og:image" content="https://ryro20.github.io/Lopple/assets/banner.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | default: 'Lopple - Bot oficial de torneos de Splatoon' }}">
+  <meta name="twitter:description" content="Gestiona torneos, automatiza resultados y organiza equipos con Lopple.">
+  <meta name="twitter:image" content="https://ryro20.github.io/Lopple/assets/banner.png">
+  <meta name="twitter:site" content="@ryro20">
 </head>
+
 <body>
 
-  {% include button_sidebar.html %}
-
-  <div class="sidebar" id="sidebar">
     {% include sidebar.html %}
-  </div>
 
   <!-- Contenido principal -->
   <main class="main">
     {{ content }}
   </main>
 
-  <footer>
-    <p>&copy; 2025 Lopple Bot. Todos los derechos reservados.</p>
+  <footer role="contentinfo" data-i18n-prefix="footer" aria-label="Pie de página">
+    <div class="footer-container">
+      
+      <nav aria-label="Enlaces del pie de página">
+        <ul class="footer-links">
+          <li><a href="index.html" data-i18n="home">Inicio</a></li>
+          <li><a href="comandos.html" data-i18n="commands">Comandos</a></li>
+          <li><a href="documentacion.html" data-i18n="docs">Documentación</a></li>
+          <li><a href="https://discord.gg/kvDgD8F6fs" target="_blank" rel="noopener noreferrer" data-i18n="discord">Discord</a></li>
+          <li><a href="https://github.com/Ryro20/Lopple" target="_blank" rel="noopener noreferrer" data-i18n="github">GitHub</a></li>
+        </ul>
+      </nav>
+
+      <ul class="legal" aria-label="Información legal">
+        <li><a href="legal.html#privacidad" data-i18n="privacy">Política de Privacidad</a></li>
+        <li><a href="legal.html#cookies" data-i18n="cookies">Política de Cookies</a></li>
+        <li><a href="legal.html#aviso-legal" data-i18n="legal">Aviso Legal</a></li>
+      </ul>
+
+      <small data-i18n="copyright">&copy; 2025 Lopple Bot. Todos los derechos reservados.</small>
+
+    </div>
   </footer>
 
-  <!-- Script externo para toggle -->
+
+  <div id="lightbox" aria-modal="true" role="dialog" tabindex="-1" hidden>
+    <button id="lightbox-close" aria-label="Cerrar vista previa">&times;</button>
+    <img id="lightbox-img" alt="Vista ampliada" />
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ '/utils/js/lightbox.js' | relative_url }}"></script>
   <script src="{{ '/utils/js/sidebar.js' | relative_url }}"></script>
-  <script src="{{ '/utils/js/find_commands.js' | relative_url }}"></script>
+  <script src="{{ '/utils/js/sidebar_submenus.js' | relative_url }}"></script>
   <script src="{{ '/utils/js/desplazamiento_centrado.js' | relative_url }}"></script>
+  <script src="{{ '/utils/js/animacion_tarjetas.js' | relative_url }}"></script>
+  <script src="{{ '/utils/js/lista_faq.js' | relative_url }}"></script>
+  <script src="{{ '/utils/js/selector_idioma.js' | relative_url }}" defer></script>
+  <script src="{{ '/utils/js/sparks.js' | relative_url }}" defer></script>
+  <script src="{{ '/utils/js/scroll-isolated.js' | relative_url }}" defer></script>
+
+
 
 </body>
 </html>

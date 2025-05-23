@@ -1,5 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-  const OFFSET = 300;
+  const OFFSET = 200;
 
   function fadeIn() {
     return new Promise((resolve) => {
@@ -41,19 +42,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function scrollToHash(hash) {
+  async function scrollToHash(hash) {
     const target = document.getElementById(hash);
     if (!target) return;
 
+    const OFFSET = 200;
     const targetPosition = target.getBoundingClientRect().top + window.scrollY - OFFSET;
 
-    window.scrollTo({
-      top: targetPosition,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
 
-    history.replaceState(null, '', `#${hash}`);
+    // Esperar hasta que scrollY sea aproximadamente igual al destino o pase el timeout
+    const checkInterval = 20;
+    const timeout = 1000;
+    let elapsed = 0;
+
+    return new Promise((resolve) => {
+      const interval = setInterval(() => {
+        const distance = Math.abs(window.scrollY - targetPosition);
+
+        if (distance < 2 || elapsed >= timeout) {
+          clearInterval(interval);
+          resolve();
+        }
+
+        elapsed += checkInterval;
+      }, checkInterval);
+    });
   }
+
 
   function scrollToTopSmooth() {
     return new Promise((resolve) => {
@@ -109,16 +125,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let storedHash = sessionStorage.getItem('scrollToAnchor');
 
   setTimeout(async () => {
-    await fadeIn();
-
     const hashToScroll = storedHash || currentHash;
     if (hashToScroll) {
-      scrollToHash(hashToScroll);
+      await scrollToHash(hashToScroll);
       sessionStorage.removeItem('scrollToAnchor');
     }
 
+    await fadeIn();
     unblockScroll();
   }, 50);
+
 
   document.body.addEventListener('click', async (e) => {
     const link = e.target.closest('a[href*="#"]');
@@ -151,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       blockScroll();
 
       await fadeOut();
+      await new Promise(resolve => setTimeout(resolve, 100));
       await scrollToTopSmooth();
 
       sessionStorage.setItem('scrollToAnchor', targetHash);

@@ -1,0 +1,94 @@
+{
+  "index": {
+    
+    "home": {
+      "welcome_message": "Welcome to Lopple",
+      "welcome_description": "Welcome to the official documentation for the <strong>Lopple</strong> bot. Here you will find detailed information about how it works and the available commands."
+    },
+
+    "overview": {
+      "title": "Quick Overview",
+      "description": "Lopple is a Discord bot developed in Python, designed to be the core of a Splatoon 3 tournament called Stellaris Phantasm.",
+      "feature1": "🎯 Advanced team management with automatic role assignment.",
+      "feature2": "🧩 Custom command system with visual responses.",
+      "feature3": "⚙️ API integration for extended features.",
+      "view_commands": "View bot commands"
+    },
+
+    "social": {
+      "title": "Follow us on social media",
+      "neus": {
+        "title": "Neus (Organizer)",
+        "twitter_label": "Neus's Twitter",
+        "twitch_label": "Neus's Twitch",
+        "youtube_label": "Neus's YouTube"
+      },
+
+      "ryro": {
+        "title": "Ryro (Developer)",
+        "twitter_label": "Ryro's Twitter",
+        "twitch_label": "Ryro's Twitch",
+        "youtube_label": "Ryro's YouTube"
+      }
+
+    },
+
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Which tournament?",
+      "a1": "Lopple is part of a community-organized Splatoon 3 tournament.<br>The tournament is called <strong>Stellaris Phantasm</strong>.",
+      "q2": "Who can participate?",
+      "a2": "Any Splatoon 3 player with a Discord account can sign up.",
+      "q3": "How do I sign up?",
+      "a3": "You can register via the <a href='https://sendou.ink/calendar?tournaments=true' target='_blank' rel='noopener noreferrer'>Sendou.ink</a> website.",
+      "q4": "Where can I see the teams?",
+      "a4": "In the “Teams” section of the tournament or in the Discord server."
+    },
+
+    "cta": {
+      "title": "Want to see how Lopple works?",
+      "description": "Join our official server and discover all the exclusive features Lopple offers to the Splatoon community.",
+      "join_discord": "Join the Discord server"
+    }
+
+  },
+
+  "legal": {
+    "info_legal": "Legal Information",
+    "menu": {
+      "privacidad": "Privacy Policy",
+      "cookies": "Cookies Policy",
+      "aviso_legal": "Legal Notice"
+    },
+    "privacidad": {
+      "titulo": "Privacy Policy",
+      "p1": "Lopple does not collect or store personal data from users. Our website is designed solely to provide technical information about the bot and the project.",
+      "p2": "No forms or subscription systems that collect data are used.",
+      "p3": "If functionalities involving data collection are implemented in the future, this policy will be duly updated."
+    },
+    "cookies": {
+      "titulo": "Cookies Policy",
+      "p1": "This website does not use cookies, so no data related to user navigation on Lopple is stored on the device.",
+      "p2": "If cookies are implemented, prior consent will be requested according to current regulations."
+    },
+    "aviso_legal": {
+      "titulo": "Legal Notice",
+      "p1": "This website is owned by Ryro, an individual. The information contained herein is provided in good faith for informational purposes only.",
+      "p2": "Total or partial reproduction without express permission is prohibited.",
+      "p3": "The website does not provide commercial, advertising, or sales services.",
+      "p4": "For any legal contact, you may use the information provided on the main page."
+    }
+  },
+
+  "footer": {
+    "copyright": "© 2025 Lopple Bot. All rights reserved.",
+    "home": "Home",
+    "commands": "Commands",
+    "docs": "Documentation",
+    "discord": "Discord",
+    "github": "GitHub",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "legal": "Legal Notice"
+  }
+}

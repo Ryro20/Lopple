@@ -16,4 +16,14 @@
     top: 10px;
     left: 10px;
   }
+
+  .card {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .card-gif {
+    max-width: 100%;
+  }
+
 }

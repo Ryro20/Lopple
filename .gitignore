@@ -1,6 +1,7 @@
 # Ignorar archivo con tokens e IDs sensibles
 claves.py
 constantes_pull.py
+style.css
 
 # Ignorar archivos zip
 *.zip

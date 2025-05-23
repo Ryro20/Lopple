@@ -1,0 +1,94 @@
+{
+  "index": {
+
+    "home": {
+      "welcome_message": "Bienvenido a Lopple",
+      "welcome_description": "Bienvenido a la documentación oficial del bot <strong>Lopple</strong>. Aquí podrás encontrar información detallada sobre su funcionamiento y comandos disponibles."
+    },
+
+    "overview": {
+      "title": "Resumen rápido",
+      "description": "Lopple es un bot de Discord desarrollado en Python, diseñado para ser el corazón de un torneo de Splatoon 3 llamado Stellaris Phantasm.",
+      "feature1": "🎯 Gestión avanzada de equipos con roles automáticos.",
+      "feature2": "🧩 Sistema de comandos personalizados con respuestas visuales.",
+      "feature3": "⚙️ Integración con APIs para funcionalidades extendidas.",
+      "view_commands": "Ver comandos del bot"
+    },
+
+    "social": {
+      "title": "Síguenos en redes",
+      "neus": {
+        "title": "Neus (Organizadora)",
+        "twitter_label": "Twitter de Neus",
+        "twitch_label": "Twitch de Neus",
+        "youtube_label": "YouTube de Neus"
+      },
+
+      "ryro": {
+        "title": "Ryro (Programador)",
+        "twitter_label": "Twitter de Ryro",
+        "twitch_label": "Twitch de Ryro",
+        "youtube_label": "YouTube de Ryro"
+      }
+
+    },
+
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": "¿Cuál torneo?",
+      "a1": "Lopple forma parte de un torneo organizado por la comunidad para Splatoon 3.<br>El torneo se llama <strong>Stellaris Phantasm </strong>",
+      "q2": "¿Quién puede participar?",
+      "a2": "Cualquier jugador de Splatoon 3 con una cuenta de Discord puede inscribirse.",
+      "q3": "¿Cómo me inscribo?",
+      "a3": "Podrás inscribirte a través de la web de <a href='https://sendou.ink/calendar?tournaments=true' target='_blank' rel='noopener noreferrer'>Sendou.ink</a>.",
+      "q4": "¿Dónde puedo ver los equipos?",
+      "a4": "En la sección “Equipos” del torneo o en el servidor de discord"
+    },
+
+    "cta": {
+      "title": "¿Quieres ver cómo funciona Lopple?",
+      "description": "Únete a nuestro servidor oficial y descubre todas las funcionalidades exclusivas que Lopple ofrece para la comunidad de Splatoon.",
+      "join_discord": "Unirse al servidor de Discord"
+    }
+  },
+
+  "legal": {
+    "info_legal": "Información Legal",
+    "menu": {
+      "privacidad": "Política de Privacidad",
+      "cookies": "Política de Cookies",
+      "aviso_legal": "Aviso Legal"
+    },
+    "privacidad": {
+      "titulo": "Política de Privacidad",
+      "p1": "En Lopple no recopilamos ni almacenamos datos personales de los usuarios. Nuestra web está diseñada únicamente para ofrecer información técnica sobre el bot y el proyecto.",
+      "p2": "No se utilizan formularios ni sistemas de suscripción que puedan recoger datos.",
+      "p3": "Si en un futuro se implementan funcionalidades que impliquen recogida de datos, esta política se actualizará debidamente."
+    },
+    "cookies": {
+      "titulo": "Política de Cookies",
+      "p1": "Este sitio web no utiliza cookies, por lo que no se almacenan datos en el dispositivo del usuario relacionados con su navegación en Lopple.",
+      "p2": "En caso de que se implementen cookies, se informará y solicitará consentimiento previo conforme a la normativa vigente."
+    },
+    "aviso_legal": {
+      "titulo": "Aviso Legal",
+      "p1": "Este sitio web es propiedad de Ryro, persona física. La información aquí contenida se ofrece de buena fe y con fines informativos únicamente.",
+      "p2": "Queda prohibida la reproducción total o parcial sin permiso expreso.",
+      "p3": "La web no presta servicios comerciales, publicitarios ni de venta.",
+      "p4": "Para cualquier contacto legal, puede usar la información proporcionada en la página principal."
+    }
+  },
+
+  "footer": {
+    "copyright": "© 2025 Lopple Bot. Todos los derechos reservados.",
+    "home": "Inicio",
+    "commands": "Comandos",
+    "docs": "Documentación",
+    "discord": "Discord",
+    "github": "GitHub",
+    "privacy": "Política de Privacidad",
+    "cookies": "Política de Cookies",
+    "legal": "Aviso Legal"
+  }
+
+}

@@ -3,24 +3,137 @@ layout: default
 title: Inicio
 ---
 
-<section id="home">
-  <h1 class="title1">Home</h1>
-  <img src="assets/banner.png" alt="Banner del bot" />
-  <p>Bienvenido a la documentación oficial del bot <strong>Lopple</strong>. Aquí podrás encontrar información detallada sobre su funcionamiento y comandos disponibles.</p>
-</section>
+<main data-i18n-prefix="index">
 
-<section id="acerca">
-  <h1 class="title1">Acerca del bot</h1>
-  <p>Lopple es un bot de Discord diseñado para gestionar equipos y sorteos. Su objetivo principal es ofrecer una experiencia automatizada, flexible y visualmente atractiva. Incluye comandos de gestión, utilidades de sorteo y soporte visual mediante embeds y reacciones.</p>
-</section>
+  <!-- Sección de bienvenida -->
+  <section id="home" aria-label="Bienvenida" data-i18n-prefix="home">
+    <h1 class="title2" data-i18n="welcome_message">Bienvenido a Lopple</h1>
+    <figure id="banner">
+      <img src="assets/banner.png" alt="Banner de Lopple con el logo y temática del torneo Stellaris Phantasm" />
+    </figure>
+    <p data-i18n="welcome_description">
+      Bienvenido a la documentación oficial del bot <strong>Lopple</strong>. Aquí podrás encontrar información detallada sobre su funcionamiento y comandos disponibles.
+    </p>
+  </section>
 
-<section id="documentacion">
-  <h1 class="title1">Documentación extra</h1>
-  <p>Aquí se mostrarán ejemplos visuales del funcionamiento del bot, cómo configurar un equipo, usar comandos y aprovechar al máximo sus funcionalidades.</p>
-    <div class="image-row">
-    <img src="assets/crimson.gif" alt="Ejemplo 1">
-    <img src="assets/lumiere.gif" alt="Ejemplo 2">
-    <img src="assets/serenade.gif" alt="Ejemplo 3">
-  </div>
+  <!-- Sección de resumen rápido -->
+  <section id="overview" data-i18n-prefix="overview" aria-label="Resumen del bot Lopple">
+    <h2 class="title2" data-i18n="title">Resumen rápido</h2>
+    <p data-i18n="description">
+      Lopple es un bot de Discord desarrollado en Python, diseñado para ser el corazón de un torneo de Splatoon 3 llamado Stellaris Phantasm.
+    </p>
+    <ul class="feature-list">
+      <li data-i18n="feature1">🎯 Gestión avanzada de equipos con roles automáticos.</li>
+      <li data-i18n="feature2">🧩 Sistema de comandos personalizados con respuestas visuales.</li>
+      <li data-i18n="feature3">⚙️ Integración con APIs para funcionalidades extendidas.</li>
+    </ul>
+    <p>
+      <a href="comandos.html#commands" class="btn-secondary" data-i18n="view_commands">Ver comandos del bot</a>
+    </p>
+  </section>
 
-</section>
+  <!-- Sección de redes sociales -->
+  <section id="social" data-i18n-prefix="social" aria-label="Redes sociales">
+    <h2 class="title2" data-i18n="title">Síguenos en redes</h2>
+    <div class="social-wrapper">
+
+      <!-- Neus -->
+      <div class="social-card" data-i18n-prefix="neus">
+        <h3 data-i18n="title">Neus (Organizadora)</h3>
+        <ul class="social-icons">
+          <li>
+            <a href="https://x.com/Neus_spl" target="_blank" rel="noopener noreferrer" aria-label="Twitter de Neus">
+              <i class="fa-brands fa-x-twitter"></i>
+              <span>@neus_az</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitch.tv/neus_az" target="_blank" rel="noopener noreferrer" aria-label="Twitch de Neus">
+              <i class="fa-brands fa-twitch"></i>
+              <span>Twitch</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCQX23tGLKzZT1ia--wT5ucQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Neus">
+              <i class="fa-brands fa-youtube"></i>
+              <span>YouTube</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Ryro -->
+      <div class="social-card" data-i18n-prefix="ryro">
+        <h3 data-i18n="title">Ryro (Programador)</h3>
+        <ul class="social-icons">
+          <li>
+            <a href="https://x.com/Ryro_20" target="_blank" rel="noopener noreferrer" aria-label="Twitter de Ryro">
+              <i class="fa-brands fa-x-twitter"></i>
+              <span>@ryro20</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitch.tv/ryro20" target="_blank" rel="noopener noreferrer" aria-label="Twitch de Ryro">
+              <i class="fa-brands fa-twitch"></i>
+              <span>Twitch</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@Ryro20" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Ryro">
+              <i class="fa-brands fa-youtube"></i>
+              <span>YouTube</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section id="faq" aria-label="Preguntas frecuentes" data-i18n-prefix="faq">
+    <h2 class="title2" data-i18n="title">Preguntas frecuentes</h2>
+    <div class="faq-list">
+
+      {% for i in (1..4) %}
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-text" data-i18n="q{{ i }}">Pregunta {{ i }}</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ff007a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p data-i18n="a{{ i }}">Respuesta {{ i }}</p>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </section>
+
+
+  <!-- Llamada a la acción -->
+  <section id="cta" class="cta-section" data-i18n-prefix="cta"aria-label="Llamada a la acción">
+    <div class="cta-content">
+      <h2 class="title2" data-i18n="title">¿Quieres ver cómo funciona Lopple?</h2>
+      <p class="cta-text" data-i18n="description">
+        Únete a nuestro servidor oficial y descubre todas las funcionalidades exclusivas que Lopple ofrece para la comunidad de Splatoon.
+      </p>
+      <a
+        href="https://discord.gg/kvDgD8F6fs"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-button"
+        data-i18n="join_discord"
+        role="button"
+        aria-label="Unirse al servidor oficial de Discord de Lopple"
+      >
+        Unirse al servidor de Discord
+      </a>
+    </div>
+  </section>
+
+</main>

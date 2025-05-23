@@ -2,89 +2,135 @@
 layout: default
 title: Comandos
 ---
+<main>
+  <section id="comandos">
+    <h1 class="title1" id="commands">Comandos disponibles</h1>
 
-<section id="comandos">
-  <h1 class="title1" id="commands">Comandos disponibles</h1>
+    <div class="card left-text" id="purgeall">
+        <div class="card-text">
+          <h3 class="card-title"><code>/purgeall</code></h3>
+          <p>Elimina todos los mensajes del canal donde se ejecuta.</p>
+          <li><strong>Uso:</strong> <code>/purgeall</code></li>
+          <li><strong>Permisos:</strong> Administrador o Gestionar mensajes</li>
+          <a href="comandos.html#ejemplo" class="card-button">Ver comando</a>
+        </div>
+        <div class="card-gif">
+          <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
+        </div>   
+    </div>
 
-  <div class="comando">
-    <h3 id="purgeall"><code>/purgeall</code></h3>
-    <p>Elimina todos los mensajes del canal actual.</p>
-    <ul>
-      <li><strong>Uso:</strong> <code>/purgeall</code></li>
-      <li><strong>Permisos:</strong> Administrador o Gestionar mensajes</li>
-    </ul>
-  </div>
+    <div class="card right-text" id="delete_registrers">
+      <div class="card-text">
+        <h3 class="card-title"><code>/delete_registrers</code></h3>
+        <p>Elimina todos los mensajes del canal actual.</p>
+        <li><strong>Uso:</strong> <code>/delete_registrers</code></li>
+        <li><strong>Permisos:</strong> Administrador o Gestionar mensajes</li>
+        <a href="comandos.html#ejemplo" class="card-button">Ver comando</a>
+      </div>
+      <div class="card-gif">
+        <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
+      </div>
+    </div>
 
-  <div class="comando">
-    <h3 id="delete_registers"><code>/delete_registers</code></h3>
-    <p>Elimina todos los registros guardados por el bot.</p>
-    <ul>
-      <li><strong>Uso:</strong> <code>/delete_registers</code></li>
-      <li><strong>Permisos:</strong> Administrador</li>
-    </ul>
-  </div>
+    <div class="card left-text" id="change_extrapulls">
+      <div class="card-text">
+        <h3 class="card-title"><code>/change_extrapulls</code></h3>
+        <p>Cambia , suma , resta o resetea las extra pulls de un equipo concreto</p>
+        <li><strong>Uso:</strong> <code>/change_extrapulls</code></li>
+        <li><strong>Permisos:</strong> TO</li>
+        <a href="comandos.html#ejemplo" class="card-button">Ver comando</a>
+      </div>
+      <div class="card-gif">
+        <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
+      </div>    
+    </div>
 
-  <div class="comando">
-    <h3 id="change_extrapulls"><code>/change_extrapulls</code></h3>
-    <p>Modifica la cantidad de pulls extra de un equipo o usuario.</p>
-    <ul>
-      <li><strong>Uso:</strong> <code>/change_extrapulls cantidad: 5</code></li>
-      <li><strong>Permisos:</strong> Administrador</li>
-    </ul>
-  </div>
+    <div class="card right-text" id="round_pull">
+      <div class="card-text">
+        <h3 class="card-title"><code>/round_pull</code></h3>
+        <p>El bot te da 10 armas para jugar</p>
+        <li><strong>Uso:</strong> <code>/round_pull</code></li>
+        <li><strong>Requisitos:</strong> Estar registrado habiendo usado /register_team</li>
+        <a href="comandos.html#register_team" class="card-button">Ver /register_team</a>
+      </div>
+      <div class="card-gif">
+        <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
+      </div> 
+    </div>
 
-  <div class="comando">
-    <h3 id="round_pull"><code>/round_pull</code></h3>
-    <p>Ejecuta una ronda de pulls para todos los equipos.</p>
-    <ul>
-      <li><strong>Uso:</strong> <code>/round_pull</code></li>
-      <li><strong>Permisos:</strong> Administrador</li>
-    </ul>
-  </div>
+    <div class="card left-text" id="extrapull">
+      <div class="card-text">
+        <h3 class="card-title"><code>/extrapull</code></h3>
+        <p>Usa una extrapull (te resta -1 en el contador de extrapulls) para otra pulls de 10 armas.</p>
+        <li><strong>Uso:</strong> <code>/extrapull</code></li>
+        <li><strong>Permisos:</strong> TO</li>
+        <a href="comandos.html#ejemplo" class="card-button">Ver comando</a>
+      </div>
+      <div class="card-gif">
+        <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
+      </div> 
+    </div>
 
-  <div class="comando">
-    <h3 id="extra_pull"><code>/extra_pull</code></h3>
-    <p>Hace un pull adicional para un equipo con extra pulls.</p>
-    <ul>
-      <li><strong>Uso:</strong> <code>/extra_pull equipo: Nombre</code></li>
-      <li><strong>Permisos:</strong> Administrador</li>
-    </ul>
-  </div>
+    <div class="comando">
+      <h3 id="extra_pull"><code>/extra_pull</code></h3>
+      <p>Hace un pull adicional para un equipo con extra pulls.</p>
+      <ul>
+        <li><strong>Uso:</strong> <code>/extra_pull equipo: Nombre</code></li>
+        <li><strong>Permisos:</strong> Administrador</li>
+      </ul>
+    </div>
 
-  <div class="comando">
-    <h3 id="test_pull"><code>/test_pull</code></h3>
-    <p>Simula un pull sin afectar los registros.</p>
-    <ul>
-      <li><strong>Uso:</strong> <code>/test_pull</code></li>
-      <li><strong>Permisos:</strong> Todos</li>
-    </ul>
-  </div>
+    <div class="comando">
+      <h3 id="test_pull"><code>/test_pull</code></h3>
+      <p>Simula un pull sin afectar los registros.</p>
+      <ul>
+        <li><strong>Uso:</strong> <code>/test_pull</code></li>
+        <li><strong>Permisos:</strong> Todos</li>
+      </ul>
+    </div>
 
-  <div class="comando">
-    <h3 id="register_team"><code>/register_team</code></h3>
-    <p>Registra un nuevo equipo en el sistema.</p>
-    <ul>
-      <li><strong>Uso:</strong> <code>/register_team nombre: "Nombre del equipo"</code></li>
-      <li><strong>Permisos:</strong> Administrador</li>
-    </ul>
-  </div>
+    <div class="comando">
+      <h3 id="register_team"><code>/register_team</code></h3>
+      <p>Registra un nuevo equipo en el sistema.</p>
+      <ul>
+        <li><strong>Uso:</strong> <code>/register_team nombre: "Nombre del equipo"</code></li>
+        <li><strong>Permisos:</strong> Administrador</li>
+      </ul>
+    </div>
 
-  <div class="comando">
-    <h3 id="edit_registered_teams"><code>/edit_registered_teams</code></h3>
-    <p>Edita un equipo registrado.</p>
-    <ul>
-      <li><strong>Uso:</strong> <code>/edit_registered_teams equipo: "Nombre" campo: "valor"</code></li>
-      <li><strong>Permisos:</strong> Administrador</li>
-    </ul>
-  </div>
+    <div class="comando">
+      <h3 id="edit_registered_teams"><code>/edit_registered_teams</code></h3>
+      <p>Edita un equipo registrado.</p>
+      <ul>
+        <li><strong>Uso:</strong> <code>/edit_registered_teams equipo: "Nombre" campo: "valor"</code></li>
+        <li><strong>Permisos:</strong> Administrador</li>
+      </ul>
+    </div>
 
-  <div class="comando">
-    <h3 id="add_member_team"><code>/add_member_team</code></h3>
-    <p>Añade un miembro a un equipo existente.</p>
-    <ul>
-      <li><strong>Uso:</strong> <code>/add_member_team equipo: "Nombre" usuario: @usuario</code></li>
-      <li><strong>Permisos:</strong> Administrador</li>
-    </ul>
-  </div>
+    <div class="comando">
+      <h3 id="add_member_team"><code>/add_member_team</code></h3>
+      <p>Añade un miembro a un equipo existente.</p>
+      <ul>
+        <li><strong>Uso:</strong> <code>/add_member_team equipo: "Nombre" usuario: @usuario</code></li>
+        <li><strong>Permisos:</strong> Administrador</li>
+      </ul>
+    </div>
 
 
+  <section id="documentacion" aria-label="Documentación adicional y ejemplos visuales">
+      <h2 class="title1">Documentación extra</h2>
+      <p>Aquí se mostrarán ejemplos visuales del funcionamiento del bot, cómo configurar un equipo, usar comandos y aprovechar al máximo sus funcionalidades.</p>
+
+      <div class="card right-text">
+        <div class="card-text">
+          <h3>Título del ejemplo 2</h3>
+          <p>Explicación formal del contenido del gif que está a la izquierda.</p>
+        </div>
+        <div class="card-gif">
+          <img src="assets/lumiere.gif" alt="Animación mostrando ejemplo 2" />
+        </div>
+      </div>
+
+  </section>
+
+</main>

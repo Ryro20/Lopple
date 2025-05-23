@@ -1,25 +1,64 @@
-<h1 class="logo">Lopple</h1>
 
-<nav class="nav-links">
+<div id="button-toggle" class="custom-toggle open" role="button" tabindex="0" aria-label="Abrir menú">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
-  <a href="index.html#home">Home</a>
 
-  <div class="comandos-container">
+<div id="sidebar" class="sidebar" >
 
-    <div class="comandos-link">
+  <h1 class="logo">
+    <img src="assets/favicon.ico" alt="Icono Lopple" class="logo-icon" />
+    <span>Lopple</span>
+  </h1>
 
-      <a href="comandos.html#commands" class="comandos-text">Commands</a>
-
-      <button class="comandos-toggle" aria-label="Desplegar comandos">▼</button>
-
+  <nav class="nav-links scrollable">
+    <div class="submenu-container">
+      <div class="submenu-link">
+        <a href="index.html#home">Home</a>
+        <button class="submenu-toggle" aria-label="Desplegar comandos" aria-expanded="false">▼</button>
+      </div>
+      <ul class="submenu-list">
+        <li><a href="index.html#overview">Resumen rápido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+        <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+      </ul>
     </div>
 
-    <ul class="subcomandos-list"></ul>
+    <div class="submenu-container">
+      <div class="submenu-link">
+        <a href="comandos.html#commands" class="submenu-text">Commands</a>
+        <button class="submenu-toggle" aria-label="Desplegar comandos" aria-expanded="false">▼</button>
+      </div>
+      <ul class="submenu-list"></ul>
+    </div>
 
+    <div class="submenu-container">
+      <div class="submenu-link">
+        <a href="torneo.html#home" class="submenu-text">Tournament</a>
+        <button class="submenu-toggle" aria-label="Desplegar comandos" aria-expanded="false">▼</button>
+      </div>
+      <ul class="submenu-list">
+        <li><a href="torneo.html#rules">Rules</a></li>
+        <li><a href="torneo.html#brackets">Brackets</a></li>
+      </ul>
+    </div>
+
+    <a href="https://github.com/Ryro20/Lopple">Return to the Github</a>
+  </nav>
+
+  <div class="custom-language-selector">
+    <button class="selector-toggle" aria-expanded="false">
+      <span class="selected-language">Idioma</span>
+      <svg class="arrow" viewBox="0 0 10 6"><path d="M0 0L5 6L10 0H0Z" /></svg>
+    </button>
+    <ul class="selector-options">
+      <li data-lang="es"><span class="lang-entry"><span class="flag">🇪🇸</span><span class="lang-name">Español</span></span></li>
+      <li data-lang="en"><span class="lang-entry"><span class="flag">🇬🇧</span><span class="lang-name">English</span></span></li> 
+    </ul>
   </div>
-  
-  <a href="index.html#acerca">About</a>
-  
-  <a href="index.html#documentacion">Extra Information</a>
 
-</nav>
+
+
+</div>
