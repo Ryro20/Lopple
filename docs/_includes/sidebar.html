@@ -6,7 +6,7 @@
 </div>
 
 
-<div id="sidebar" class="sidebar" >
+<div id="sidebar" data-i18n-prefix="sidebar" class="sidebar" >
 
   <h1 class="logo">
     <img src="assets/favicon.ico" alt="Icono Lopple" class="logo-icon" />
@@ -16,19 +16,19 @@
   <nav class="nav-links scrollable">
     <div class="submenu-container">
       <div class="submenu-link">
-        <a href="index.html#home">Home</a>
+        <a data-i18n="inicio" href="index.html#home">Inicio</a>
         <button class="submenu-toggle" aria-label="Desplegar comandos" aria-expanded="false">▼</button>
       </div>
       <ul class="submenu-list">
-        <li><a href="index.html#overview">Resumen rápido</a></li>
-        <li><a href="index.html#social">Social</a></li>
-        <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+        <li><a data-i18n="resumen" href="index.html#overview">Resumen rápido</a></li>
+        <li><a data-i18n="social" href="index.html#social">Social</a></li>
+        <li><a data-i18n="faq" href="index.html#faq">Preguntas frecuentes</a></li>
       </ul>
     </div>
 
     <div class="submenu-container">
       <div class="submenu-link">
-        <a href="comandos.html#commands" class="submenu-text">Commands</a>
+        <a data-i18n="comandos" href="comandos.html#commands" class="submenu-text">Comandos</a>
         <button class="submenu-toggle" aria-label="Desplegar comandos" aria-expanded="false">▼</button>
       </div>
       <ul class="submenu-list"></ul>
@@ -36,16 +36,30 @@
 
     <div class="submenu-container">
       <div class="submenu-link">
-        <a href="torneo.html#home" class="submenu-text">Tournament</a>
+        <a data-i18n="torneo" href="torneo.html#home" class="submenu-text">Torneo</a>
         <button class="submenu-toggle" aria-label="Desplegar comandos" aria-expanded="false">▼</button>
       </div>
       <ul class="submenu-list">
-        <li><a href="torneo.html#rules">Rules</a></li>
-        <li><a href="torneo.html#brackets">Brackets</a></li>
+        <li><a data-i18n="reglas" href="torneo.html#rules">Reglas</a></li>
+        <li><a data-i18n="faq" href="torneo.html">Preguntas Frecuentes</a></li>
+      </ul>
+
+    </div>
+
+        <div class="submenu-container">
+      <div class="submenu-link">
+        <a data-i18n="legal" href="legal.html#info" class="submenu-text">Información Legal</a>
+        <button class="submenu-toggle" aria-label="Desplegar comandos" aria-expanded="false">▼</button>
+      </div>
+      <ul class="submenu-list">
+        <li><a data-i18n="privacidad" href="legal.html#privacidad">Privacidad</a></li>
+        <li><a data-i18n="cookies" href="legal.html#cookies">Cookies</a></li>
+        <li><a data-i18n="aviso_legal" href="legal.html#aviso_legal">Aviso</a></li>
+
       </ul>
     </div>
 
-    <a href="https://github.com/Ryro20/Lopple">Return to the Github</a>
+    <a data-i18n="volver_github" href="https://github.com/Ryro20/Lopple">Volver a Github</a>
   </nav>
 
   <div class="custom-language-selector">
@@ -54,8 +68,8 @@
       <svg class="arrow" viewBox="0 0 10 6"><path d="M0 0L5 6L10 0H0Z" /></svg>
     </button>
     <ul class="selector-options">
-      <li data-lang="es"><span class="lang-entry"><span class="flag">🇪🇸</span><span class="lang-name">Español</span></span></li>
-      <li data-lang="en"><span class="lang-entry"><span class="flag">🇬🇧</span><span class="lang-name">English</span></span></li> 
+      <li data-lang="es"><span class="lang-entry"><span class="flag">🇪🇸</span><span data-i18n="es" class="lang-name">Español</span></span></li>
+      <li data-lang="en"><span class="lang-entry"><span class="flag">🇬🇧</span><span data-i18n="en" class="lang-name">English</span></span></li> 
     </ul>
   </div>
 

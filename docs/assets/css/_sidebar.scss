@@ -298,7 +298,7 @@ $bar-gap: 13px;
   color: #ccc;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.8s ease;
+  transition: transform 0.7s ease;
 }
 
 .submenu-list {
@@ -308,7 +308,7 @@ $bar-gap: 13px;
   max-height: 0;
   overflow: hidden; 
   opacity: 0;
-  transition: max-height 0.8s ease-in-out, opacity 1s ease-in-out;
+  transition: max-height 0.7s ease-in-out, opacity 1s ease-in-out;
   display: block;
 }
 

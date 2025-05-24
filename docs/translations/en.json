@@ -1,4 +1,23 @@
 {
+
+  "sidebar": {
+    "inicio": "Home",
+    "resumen": "Quick Overview",
+    "social": "Social",
+    "faq": "Frequently Asked Questions",
+    "comandos": "Commands",
+    "torneo": "Tournament",
+    "reglas": "Rules",
+    "legal": "Legal Information",
+    "privacidad": "Privacy",
+    "cookies": "Cookies",
+    "aviso_legal": "Legal Notice",
+    "volver_github": "Back to GitHub",
+    "idioma": "Language",
+    "es": "Spanish",
+    "en": "English"
+  },
+
   "index": {
     
     "home": {
