@@ -40,11 +40,33 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(err => console.error("Error cargando idioma:", err));
   }
 
+  function updateLocalizedTime(lang) {
+    const timeEl = document.querySelector(".stellaris-phantasm__time");
+    const eventInMadrid = new Date(Date.UTC(2025, 3, 27, 17, 0, 0)); // 19:00 CEST = 17:00 UTC
+    
+    const formatter = new Intl.DateTimeFormat(lang, {
+      weekday: "long",
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      hour12: false
+    });
+
+    const formatted = formatter.format(eventInMadrid);
+    const text = lang === "es"
+      ? `Todos los ${formatted} (hora local)`
+      : `Every ${formatted} (your local time)`;
+
+    timeEl.textContent = text;
+  }
+
+
   function setLanguage(lang) {
     localStorage.setItem("language", lang);
     selectedText.textContent = lang === "es" ? "Español" : "English";
     document.documentElement.setAttribute("lang", lang); // <- esta línea es esencial
     loadLanguage(lang);
+    updateLocalizedTime(lang);
   }
 
   setLanguage(savedLang);
