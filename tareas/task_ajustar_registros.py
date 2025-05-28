@@ -60,8 +60,9 @@ async def sync_team_registers():
                 )
 
                 if canal_equipo is None:
+                    miembros_equipo = [m for m in guild.members if rol in m.roles]
                     try:
-                        await RU.create_team_channel(guild, nombre, rol)
+                        await RU.create_team_channel(guild, nombre, rol, miembros_equipo)
                         print(f"✅ Canal creado para equipo existente: {nombre}")
                     except Exception as e:
                         print(f"🚨 Error al crear canal para {nombre}: {e}")

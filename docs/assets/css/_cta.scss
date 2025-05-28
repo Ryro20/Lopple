@@ -1,68 +1,75 @@
 .cta-section {
 
-    position: relative; // <-- Importante
-    background: linear-gradient(to right, #ff007a30, #000000 90%);
-    padding: 3rem 2rem;
-    text-align: center;
-    border-radius: 1rem;
+  position: relative; // <-- Importante
+  background: linear-gradient(to right, #ff007a30, #000000 90%);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  box-shadow: 0 0 20px rgba(255, 0, 122, 0.2);
+  transition: transform 0.3s ease;
+  z-index: 1;
+
+
+  &:hover {
+      animation: breathe 2s ease-in-out infinite;
+  }
+
+  .cta-content {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+
+  .cta-text {
+    position: relative;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #eee;
+    z-index: 2;
+  }
+
+  .cta-button {
+    align-self: center;
+    z-index: 3;
     margin-top: 3rem;
-    box-shadow: 0 0 20px rgba(255, 0, 122, 0.2);
-    transition: transform 0.3s ease;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    color: #ff007a;
+    background: transparent;
+    border: 2px solid #ff007a;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #ff007a, #ff4ca8);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+        border-radius: 50px; // ← solución
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
 
     &:hover {
-        animation: breathe 2s ease-in-out infinite;
+        color: white;
+        transform: translateY(-2px);
     }
 
-    .cta-content {
-        max-width: 700px;
-        margin: 0 auto;
+    &:active {
+        transform: scale(0.97);
     }
-
-    .cta-text {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-        color: #eee;
-    }
-
-    .cta-button {
-        align-self: center;
-        margin-top: 3rem;
-        padding: 0.75rem 2rem;
-        font-size: 1rem;
-        border-radius: 50px;
-        color: #ff007a;
-        background: transparent;
-        border: 2px solid #ff007a;
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        text-decoration: none;
-        transition: color 0.3s ease, transform 0.2s ease;
-
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, #ff007a, #ff4ca8);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-            border-radius: 50px; // ← solución
-        }
-
-        &:hover::before {
-            opacity: 1;
-        }
-
-        &:hover {
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        &:active {
-            transform: scale(0.97);
-        }
-    }
+  }
 }
 
 .feature-list {

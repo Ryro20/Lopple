@@ -7,12 +7,15 @@
     "faq": "Frequently Asked Questions",
     "comandos": "Commands",
     "torneo": "Tournament",
-    "reglas": "Rules",
+    "info": "General Information",
+    "reglas": "Basic Rules",
+    "reglas_esp": "Special Rules",
     "legal": "Legal Information",
     "privacidad": "Privacy",
     "cookies": "Cookies",
     "aviso_legal": "Legal Notice",
     "volver_github": "Back to GitHub",
+    "discord":"Discord",
     "idioma": "Language",
     "es": "Spanish",
     "en": "English"
@@ -70,6 +73,151 @@
       "join_discord": "Join the Discord server"
     }
 
+  },
+
+    "comandos": {
+    "publicos": {
+      "titulo": "Commands for everyone",
+      "round_pull": {
+        "titulo": "/round_pull",
+        "descripcion": "The bot provides 10 weapons to play.",
+        "uso_label": "Usage:",
+        "uso_valor": "/round_pull",
+        "requisitos_label": "Requirements:",
+        "requisitos_valor": "Have registered a team with /register_team",
+        "ver_registro": "See /register_team"
+      },
+      "extrapull": {
+        "titulo": "/extrapull",
+        "descripcion": "Consumes an extra pull to get another 10 weapons.",
+        "uso_label": "Usage:",
+        "uso_valor": "/extrapull",
+        "requisitos_label": "Requirements:",
+        "requisitos_valor": "Have at least one extra pull and be registered with /register_team",
+        "ver_registro": "See /register_team"
+      },
+      "test_pull": {
+        "titulo": "/test_pull",
+        "descripcion": "Get 10 weapons as a test to see how /round_pull works.",
+        "uso_label": "Usage:",
+        "uso_valor": "/test_pull",
+        "requisitos_label": "Requirements:",
+        "requisitos_valor": "None",
+        "ver_round_pull": "See /round_pull"
+      },
+      "register_team": {
+        "titulo": "/register_team",
+        "descripcion": "Register your team with at least one member.",
+        "uso_label": "Usage:",
+        "uso_valor": "/register_team team_name:\"Name\" captain:\"@user\" [player_2:\"@user\" ...]",
+        "requisitos_label": "Requirements:",
+        "requisitos_valor": "None"
+      },
+      "add_member_team": {
+        "titulo": "/add_member_team",
+        "descripcion": "Add a member to your team.",
+        "uso_label": "Usage:",
+        "uso_valor": "/add_member_team team:\"Team Name\" user:\"@user\"",
+        "requisitos_label": "Requirements:",
+        "requisitos_valor": "Have registered a team with /register_team",
+        "ver_registro": "See /register_team"
+      }
+    },
+    "admin": {
+      "titulo": "Commands for tournament organizers (TO)",
+      "purgeall": {
+        "titulo": "/purgeall",
+        "descripcion": "Deletes all messages in the current channel.",
+        "uso_label": "Usage:",
+        "uso_valor": "/purgeall",
+        "requisitos_label": "Requirements:",
+        "requisitos_valor": "Be TO"
+      },
+      "delete_registers": {
+        "titulo": "/delete_registers",
+        "descripcion": "Deletes all registrations in the current channel.",
+        "uso_label": "Usage:",
+        "uso_valor": "/delete_registers",
+        "requisitos_label": "Requirements:",
+        "requisitos_valor": "Be TO"
+      },
+      "change_extrapulls": {
+        "titulo": "/change_extrapulls",
+        "descripcion": "Modifies (adds, subtracts or resets) the extra pulls of a specific team.",
+        "uso_label": "Usage:",
+        "uso_valor": "/change_extrapulls",
+        "requisitos_label": "Requirements:",
+        "requisitos_valor": "Be TO"
+      },
+      "edit_registered_teams": {
+        "titulo": "/edit_registered_teams",
+        "descripcion": "Edits teams that have been previously registered.",
+        "uso_label": "Usage:",
+        "uso_valor": "/edit_registered_teams",
+        "requisitos_label": "Requirements:",
+        "requisitos_valor": "Be TO"
+      }
+    }
+  },
+
+  "torneo": {
+    "titulo": "✨ Stellaris Phantasm ✨",
+    "subtitulo": "Tournament based on RNG and gacha mechanics: each team gets 10 random weapons per round + extra pulls.",
+    "informacion_general": {
+      "titulo": "General information",
+      "formato_label": "Format:",
+      "formato_valor": "All modes. Groups in 3 single-elimination brackets (Alpha, Beta, Gamma).",
+      "participacion_label": "Participation:",
+      "participacion_valor": "Open level; anyone can play.",
+      "horario_label": "Schedule:",
+      "horario_valor": "Sundays at 19:00 UTC",
+      "premios_label": "Prizes:",
+      "premio1": "Sendou badges for winners of Crimson, Lumière and Serenade.",
+      "premio2_part1": "Art giveaway courtesy of",
+      "premio2_part2": "@c4ssio.png"
+    },
+    "reglas_basicas": {
+      "titulo": "Basic rules",
+      "formato_torneo": "Tournament format",
+      "regla1": "Fewer than 6 teams → cancellation.",
+      "regla2": "Group stage 4v4 best-of-3.",
+      "regla3": "Single elimination in three brackets (Crimson, Lumière, Serenade).",
+      "inscripcion_titulo": "Registration",
+      "inscripcion1": "Register up to 15 min before start.",
+      "inscripcion2": "Team captain must join Discord before starting.",
+      "plantilla_titulo": "Roster and substitutes",
+      "plantilla1": "Up to 6 players per team.",
+      "plantilla2": "Substitutes allowed if fewer than 4 starters or not exceeding 6 total.",
+      "alias_titulo": "Aliases",
+      "alias_texto": "Allowed if real identity is clearly indicated; no inappropriate content.",
+      "limites_titulo": "Time limits",
+      "limite1": "10 min to use the bot and join lobby; thereafter, −1 point every 5 min.",
+      "limite2": "Between matches, host confirms changes or extra pulls.",
+      "limite3": "Max. 35 min (Bo3), 50 min (Bo5); past that, staff decides score.",
+      "desconexiones_titulo": "Disconnects",
+      "desconexiones_texto": "1 replay per set if after 2:30 min and opponent has < 50 points. Cancel set and keep weapons/equipment (except substitute). Lobby disconnects do not count.",
+      "cancelacion_titulo": "Match cancellation",
+      "cancelacion1": "<em>First 10 s:</em> selection errors or rerolls → replay.",
+      "cancelacion2": "<em>During match:</em> using weapon off-list → opponent wins the point.",
+      "prohibido_titulo": "Match-throwing prohibited",
+      "prohibido_texto": "Intentional throws to manipulate badges incur penalty: cannot win badges."
+    },
+    "reglas_especiales": {
+      "titulo": "Special rules",
+      "sistema_titulo": "Weapon-pull system",
+      "sistema_texto": "At the start of each round, each team must use <strong>Round Pull</strong> (mandatory) to get 10 valid weapons for the set. After that, they receive 1 optional <strong>Extra Pull</strong>.",
+      "detalle_titulo": "Pull details",
+      "detalle1": "10 distinct weapons per pull; variable probabilities (see Discord server).",
+      "detalle2": "Do not duplicate weapons in the same set; always use the latest list.",
+      "detalle3": "If the SplatScreen is banned, use the alternative weapon variant.",
+      "tipos_titulo": "Pull types",
+      "tp_round": "Round Pull",
+      "tp_round_dd": "Mandatory at round start; marks the set’s beginning.",
+      "tp_extra": "Extra Pull",
+      "tp_extra_dd": "Optional; can be used after Round Pull or during round. Not valid after final game without new round.",
+      "importante_titulo": "‼️ IMPORTANT ‼️",
+      "importante_texto": "‼️ These rules also apply in semifinals and finals. ‼️"
+    }
   },
 
   "legal": {

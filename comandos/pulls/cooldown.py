@@ -31,7 +31,7 @@ async def verificar_cooldown(interaction: discord.Interaction, equipo_id: str | 
 
         await interaction.followup.send(
             f"⏳ The {rol_equipo.mention} team must wait {minutos}m {segundos}s before using /round_pull again.\n" +
-            "You can use /extra_pull if the weapon pull isn't in your favor.",
+            "If you wanted to re-roll your weapons, use /extra-pull.",
             ephemeral=False
         )
         return True

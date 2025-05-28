@@ -7,12 +7,15 @@
     "faq": "Preguntas frecuentes",
     "comandos": "Comandos",
     "torneo": "Torneo",
-    "reglas": "Reglas",
+    "info": "Información General",
+    "reglas": "Reglas Básicas",
+    "reglas_esp": "Reglas Especiales",
     "legal": "Información Legal",
     "privacidad": "Privacidad",
     "cookies": "Cookies",
     "aviso_legal": "Aviso Legal",
     "volver_github": "Volver a Github",
+    "discord":"Discord",
     "idioma": "Idioma",
     "es": "Español",
     "en": "Inglés"
@@ -68,6 +71,151 @@
       "title": "¿Quieres ver cómo funciona Lopple?",
       "description": "Únete a nuestro servidor oficial y descubre todas las funcionalidades exclusivas que Lopple ofrece para la comunidad de Splatoon.",
       "join_discord": "Unirse al servidor de Discord"
+    }
+  },
+
+    "comandos": {
+    "publicos": {
+      "titulo": "Comandos para todos",
+      "round_pull": {
+        "titulo": "/round_pull",
+        "descripcion": "El bot proporciona 10 armas para jugar.",
+        "uso_label": "Uso:",
+        "uso_valor": "/round_pull",
+        "requisitos_label": "Requisitos:",
+        "requisitos_valor": "Haberse registrado un equipo con /register_team",
+        "ver_registro": "Ver /register_team"
+      },
+      "extrapull": {
+        "titulo": "/extrapull",
+        "descripcion": "Consume una extra pull para obtener otras 10 armas.",
+        "uso_label": "Uso:",
+        "uso_valor": "/extrapull",
+        "requisitos_label": "Requisitos:",
+        "requisitos_valor": "Tener al menos una extra pull y estar registrado con /register_team",
+        "ver_registro": "Ver /register_team"
+      },
+      "test_pull": {
+        "titulo": "/test_pull",
+        "descripcion": "Obtén 10 armas como prueba para ver el funcionamiento de /round_pull.",
+        "uso_label": "Uso:",
+        "uso_valor": "/test_pull",
+        "requisitos_label": "Requisitos:",
+        "requisitos_valor": "Ninguno",
+        "ver_round_pull": "Ver /round_pull"
+      },
+      "register_team": {
+        "titulo": "/register_team",
+        "descripcion": "Registra tu equipo con al menos un miembro.",
+        "uso_label": "Uso:",
+        "uso_valor": "/register_team team_name:\"Nombre\" captain:\"@usuario\" [player_2:\"@usuario\" ...]",
+        "requisitos_label": "Requisitos:",
+        "requisitos_valor": "Ninguno"
+      },
+      "add_member_team": {
+        "titulo": "/add_member_team",
+        "descripcion": "Añade un miembro a tu equipo.",
+        "uso_label": "Uso:",
+        "uso_valor": "/add_member_team team:\"Nombre del equipo\" usuario:\"@usuario\"",
+        "requisitos_label": "Requisitos:",
+        "requisitos_valor": "Haberse registrado un equipo con /register_team",
+        "ver_registro": "Ver /register_team"
+      }
+    },
+    "admin": {
+      "titulo": "Comandos para organizadores del torneo (TO)",
+      "purgeall": {
+        "titulo": "/purgeall",
+        "descripcion": "Elimina todos los mensajes del canal actual.",
+        "uso_label": "Uso:",
+        "uso_valor": "/purgeall",
+        "requisitos_label": "Requisitos:",
+        "requisitos_valor": "Ser TO"
+      },
+      "delete_registers": {
+        "titulo": "/delete_registers",
+        "descripcion": "Elimina todos los registros del canal actual.",
+        "uso_label": "Uso:",
+        "uso_valor": "/delete_registers",
+        "requisitos_label": "Requisitos:",
+        "requisitos_valor": "Ser TO"
+      },
+      "change_extrapulls": {
+        "titulo": "/change_extrapulls",
+        "descripcion": "Modifica (suma, resta o resetea) las extra pulls de un equipo concreto.",
+        "uso_label": "Uso:",
+        "uso_valor": "/change_extrapulls",
+        "requisitos_label": "Requisitos:",
+        "requisitos_valor": "Ser TO"
+      },
+      "edit_registered_teams": {
+        "titulo": "/edit_registered_teams",
+        "descripcion": "Edita los equipos que han sido registrados previamente.",
+        "uso_label": "Uso:",
+        "uso_valor": "/edit_registered_teams",
+        "requisitos_label": "Requisitos:",
+        "requisitos_valor": "Ser TO"
+      }
+    }
+  },
+
+  "torneo": {
+    "titulo": "✨ Stellaris Phantasm ✨",
+    "subtitulo": "Torneo basado en RNG y mecánicas gacha: cada equipo obtiene 10 armas aleatorias por ronda + tiradas extra.",
+    "informacion_general": {
+      "titulo": "Información general",
+      "formato_label": "Formato:",
+      "formato_valor": "Todos los modos. Grupos en 3 cuadros eliminatorios (Alpha, Beta, Gamma).",
+      "participacion_label": "Participación:",
+      "participacion_valor": "Nivel libre; cualquiera puede jugar.",
+      "horario_label": "Horario:",
+      "horario_valor": "Domingos a las 19:00 UTC",
+      "premios_label": "Premios:",
+      "premio1": "Insignias Sendou para ganadores de Crimson, Lumière y Serenade.",
+      "premio2_part1": "Sorteo de arte cortesía de",
+      "premio2_part2": "@c4ssio.png"
+    },
+    "reglas_basicas": {
+      "titulo": "Reglas básicas",
+      "formato_torneo": "Formato del torneo",
+      "regla1": "Menos de 6 equipos → cancelación.",
+      "regla2": "Fase de grupos 4v4 al mejor de 3.",
+      "regla3": "Eliminación simple en tres cuadros (Crimson, Lumière, Serenade).",
+      "inscripcion_titulo": "Inscripción",
+      "inscripcion1": "Hasta 15 min antes del inicio para registrarse.",
+      "inscripcion2": "El capitán debe unirse al Discord antes de empezar.",
+      "plantilla_titulo": "Plantilla y suplentes",
+      "plantilla1": "Máximo 6 jugadores por equipo.",
+      "plantilla2": "Suplentes permitidos si hay < 4 titulares o no exceden 6 totales.",
+      "alias_titulo": "Alias",
+      "alias_texto": "Permitidos si la identidad real se indica claramente; sin contenidos inapropiados.",
+      "limites_titulo": "Límites de tiempo",
+      "limite1": "10 min para usar el bot y unirse al lobby; tras ello, −1 punto cada 5 min.",
+      "limite2": "Entre partidas, el anfitrión confirma cambios o tiradas extra.",
+      "limite3": "Máx. 35 min (Bo3), 50 min (Bo5); pasado ese tiempo, staff decide el marcador.",
+      "desconexiones_titulo": "Desconexiones",
+      "desconexiones_texto": "1 repetición por set si ocurre tras 2:30 min y el rival no tiene ≥50 puntos. Hay que cancelar el set y mantener armas/equipo (salvo suplente). Desconexiones de lobby no cuentan.",
+      "cancelacion_titulo": "Cancelación de partida",
+      "cancelacion1": "<em>Primeros 10 s:</em> errores en selección o reroll → repetición.",
+      "cancelacion2": "<em>Durante el juego:</em> uso de arma fuera de lista → el otro gana el punto.",
+      "prohibido_titulo": "Prohibido tirar partidas",
+      "prohibido_texto": "Tiradas intencionales para manipular insignias conllevan sanción: imposibilidad de ganar insignias."
+    },
+    "reglas_especiales": {
+      "titulo": "Reglas especiales",
+      "sistema_titulo": "Sistema de tiradas de armas",
+      "sistema_texto": "Al inicio de cada ronda, cada equipo debe usar <strong>Round Pull</strong> (obligatorio) para obtener 10 armas válidas todo el set. Tras ello, recibe 1 <strong>Extra Pull</strong> opcional y acumulable.",
+      "detalle_titulo": "Detalle de las tiradas",
+      "detalle1": "10 armas distintas por tirada; probabilidades variables (disponibles en el servidor de Discord).",
+      "detalle2": "No duplicar armas en el mismo set; usar siempre la última lista.",
+      "detalle3": "Si la Pantintalla está baneada, usar la otra variante del arma.",
+      "tipos_titulo": "Tipos de tiradas",
+      "tp_round": "Round Pull",
+      "tp_round_dd": "Obligatoria al inicio de cada ronda; marca el arranque del set.",
+      "tp_extra": "Extra Pull",
+      "tp_extra_dd": "Opcional, puede usarse tras la Round Pull o durante la ronda. No válida tras el último juego sin iniciar nueva ronda.",
+      "importante_titulo": "‼️ IMPORTANTE ‼️",
+      "importante_texto": "‼️ Estas reglas aplican también en semifinales y final. ‼️"
     }
   },
 

@@ -1,4 +1,221 @@
 ---
 layout: default
-title: Tournament
+title: Stellaris Phantasm
+description: "Informacion del Torneo Stellaris Phantasm"
+keywords: "Lopple, commands, Discord, Splatoon 3, tournaments"
+og_image: "assets/icono-torneo.jpg"
 ---
+
+<main class="stellaris-phantasm" data-i18n-prefix="torneo">
+
+  <!-- Encabezado del torneo -->
+  <header class="stellaris-phantasm__header" id="home">
+    <img
+      src="assets/icono-torneo.jpg"
+      alt="Icono Stellaris Phantasm"
+      class="stellaris-phantasm__header-icon"
+    >
+    <h1 class="stellaris-phantasm__header-title" data-i18n="titulo">
+      ✨ Stellaris Phantasm ✨
+    </h1>
+    <p class="stellaris-phantasm__header-subtitle" data-i18n="subtitulo">
+      Torneo basado en RNG y mecánicas gacha: cada equipo obtiene 10 armas aleatorias por ronda + tiradas extra.
+    </p>
+  </header>
+
+  <!-- Información general -->
+  <section class="stellaris-phantasm__section" id="informacion_general" data-i18n-prefix="informacion_general" tabindex="-1">
+    <h2 class="stellaris-phantasm__section-title" data-i18n="titulo">Información general</h2>
+    <ul class="stellaris-phantasm__section-list">
+      <li>
+        <strong data-i18n="formato_label">Formato:</strong>
+        <span data-i18n="formato_valor">Todos los modos. Grupos en 3 cuadros eliminatorios (Alpha, Beta, Gamma).</span>
+      </li>
+      <li>
+        <strong data-i18n="participacion_label">Participación:</strong>
+        <span data-i18n="participacion_valor">Nivel libre; cualquiera puede jugar.</span>
+      </li>
+      <li>
+        <strong data-i18n="horario_label">Horario:</strong>
+        <time class="stellaris-phantasm__time" datetime="2025-04-27T19:00:00Z" data-i18n="horario_valor">
+          Domingos a las 19:00 UTC
+        </time>
+      </li>
+      <li>
+        <strong data-i18n="premios_label">Premios:</strong>
+        <ul>
+          <li data-i18n="premio1">Insignias Sendou para ganadores de Crimson, Lumière y Serenade.</li>
+          <li>
+            <span data-i18n="premio2_part1">Sorteo de arte cortesía de</span>
+            <a
+              href="https://sendou.ink/u/cassio/art"
+              target="_blank"
+              class="stellaris-phantasm__link"
+              data-i18n="premio2_part2"
+            >@c4ssio.png</a>.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Reglas básicas -->
+  <section class="stellaris-phantasm__section" id="reglas_basicas" data-i18n-prefix="reglas_basicas" tabindex="-1">
+    <h2 class="stellaris-phantasm__section-title" data-i18n="titulo">Reglas básicas</h2>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="formato_torneo">
+        Formato del torneo
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <ul>
+          <li data-i18n="regla1">Menos de 6 equipos → cancelación.</li>
+          <li data-i18n="regla2">Fase de grupos 4v4 al mejor de 3.</li>
+          <li data-i18n="regla3">Eliminación simple en tres cuadros (Crimson, Lumière, Serenade).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="inscripcion_titulo">
+        Inscripción
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <ul>
+          <li data-i18n="inscripcion1">Hasta 15 min antes del inicio para registrarse.</li>
+          <li data-i18n="inscripcion2">El capitán debe unirse al Discord antes de empezar.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="plantilla_titulo">
+        Plantilla y suplentes
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <ul>
+          <li data-i18n="plantilla1">Máximo 6 jugadores por equipo.</li>
+          <li data-i18n="plantilla2">Suplentes permitidos si hay &lt; 4 titulares o no exceden 6 totales.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="alias_titulo">
+        Alias
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <p data-i18n="alias_texto">
+          Permitidos si la identidad real se indica claramente; sin contenidos inapropiados.
+        </p>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="limites_titulo">
+        Límites de tiempo
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <ul>
+          <li data-i18n="limite1">10 min para usar el bot y unirse al lobby; tras ello, −1 punto cada 5 min.</li>
+          <li data-i18n="limite2">Entre partidas, el anfitrión confirma cambios o tiradas extra.</li>
+          <li data-i18n="limite3">Máx. 35 min (Bo3), 50 min (Bo5); pasado ese tiempo, staff decide el marcador.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="desconexiones_titulo">
+        Desconexiones
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <p data-i18n="desconexiones_texto">
+          1 repetición por set si ocurre tras 2:30 min y el rival no tiene ≥50 puntos.
+          Hay que cancelar el set y mantener armas/equipo (salvo suplente).
+          Desconexiones de lobby no cuentan.
+        </p>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="cancelacion_titulo">
+        Cancelación de partida
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <ul>
+          <li data-i18n="cancelacion1"><em>Primeros 10 s:</em> errores en selección o reroll → repetición.</li>
+          <li data-i18n="cancelacion2"><em>Durante el juego:</em> uso de arma fuera de lista → el otro gana el punto.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="prohibido_titulo">
+        Prohibido tirar partidas
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <p data-i18n="prohibido_texto">
+          Tiradas intencionales para manipular insignias conllevan sanción: imposibilidad de ganar insignias.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reglas especiales -->
+  <section class="stellaris-phantasm__section" id="reglas_especiales" data-i18n-prefix="reglas_especiales" tabindex="-1">
+    <h2 class="stellaris-phantasm__section-title" data-i18n="titulo">Reglas especiales</h2>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="sistema_titulo">
+        Sistema de tiradas de armas
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <p data-i18n="sistema_texto">
+          Al inicio de cada ronda, cada equipo debe usar <strong>Round Pull</strong>
+          (obligatorio) para obtener 10 armas válidas todo el set. Tras ello,
+          recibe 1 <strong>Extra Pull</strong> opcional y acumulable.
+        </p>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="detalle_titulo">
+        Detalle de las tiradas
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <ul>
+          <li data-i18n="detalle1">10 armas distintas por tirada; probabilidades variables (disponibles en el servidor de Discord).</li>
+          <li data-i18n="detalle2">No duplicar armas en el mismo set; usar siempre la última lista.</li>
+          <li data-i18n="detalle3">Si la Pantintalla está baneada, usar la otra variante del arma.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="tipos_titulo">
+        Tipos de tiradas
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <dl>
+          <dt data-i18n="tp_round">Round Pull</dt>
+          <dd data-i18n="tp_round_dd">Obligatoria al inicio de cada ronda; marca el arranque del set.</dd>
+          <dt data-i18n="tp_extra">Extra Pull</dt>
+          <dd data-i18n="tp_extra_dd">
+            Opcional, puede usarse tras la Round Pull o durante la ronda. No válida tras el último juego sin iniciar nueva ronda.
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="stellaris-phantasm__section__collapsible stellaris-phantasm__section__collapsible--centered">
+      <div class="stellaris-phantasm__section__collapsible-summary" data-i18n="importante_titulo">
+        ‼️ IMPORTANTE ‼️
+      </div>
+      <div class="stellaris-phantasm__section__collapsible-content">
+        <p><strong data-i18n="importante_texto">‼️ Estas reglas aplican también en semifinales y final. ‼️</strong></p>
+      </div>
+    </div>
+
+  </section>
+
+</main>

@@ -106,6 +106,12 @@ async def register_team(
 
     await interaction.response.defer()
 
+    if not re.fullmatch(r"[A-Za-z0-9 \-]+", team_name):
+        return await interaction.followup.send(
+            "The team name may only contain letters, numbers, spaces, and hyphens.",
+            ephemeral=False
+        )
+
     guild = interaction.guild
 
     players = list(filter(None, [captain, player_1, player_2, player_3, player_4, player_5]))

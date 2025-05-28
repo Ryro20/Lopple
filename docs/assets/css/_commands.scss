@@ -25,3 +25,210 @@
 }
 
 
+/* ============================
+   TARJETAS PARA COMANDOS
+============================ */
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  // centra tarjetas horizontalmente
+  gap: 3rem;            // espacio vertical entre tarjetas
+  padding: 25px 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: stretch;   
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 0, 122, 0.3);
+  overflow: hidden;
+  opacity: 0;
+  transition: transform 0.8s ease-in-out,
+              opacity 0.8s ease-in-out,
+              box-shadow 0.4s ease-in-out;
+  transform-style: preserve-3d;
+
+  &.left-text {
+    flex-direction: row;
+    transform: translateX(100px);
+  }
+
+  &.right-text {
+    flex-direction: row-reverse;
+    transform: translateX(-100px);
+  }
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0) scale(1); // Combina transformaciones
+  }
+
+  &:hover {
+    transform: translateX(0) scale(1.04); // Mantiene la continuidad
+  }
+
+
+ // === EFECTO BRILLO FLUIDO ===
+  &.left-text::before,
+  &.right-text::before {
+    text-align: left;
+    content: "";
+    filter: blur(25px);
+    position: absolute;
+    top: -25%;
+    width: 400%;
+    height: 150%;
+    pointer-events: none;
+    opacity: 1;
+    border-radius: inherit;
+    transition: transform 1.2s ease-in-out;
+    will-change: transform;
+    backface-visibility: hidden;
+    z-index: 1;
+    transform-style: preserve-3d;
+  }
+
+  &.left-text::before {
+    left: -150%;
+    background: linear-gradient(
+      135deg,
+      rgba(42, 42, 42, 0) 10%,
+      rgba(255, 255, 255, 0.2) 30%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.2) 70%,
+      rgba(42, 42, 42, 0) 90%
+    );
+    transform: translateX(80%);
+  }
+
+  &.right-text::before {
+    left: -150%;
+    background: linear-gradient(
+      -135deg,
+      rgba(42, 42, 42, 0) 10%,
+      rgba(255, 255, 255, 0.2) 30%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.2) 70%,
+      rgba(42, 42, 42, 0) 90%
+    );
+    transform: translateX(-80%);
+  }
+
+  &.left-text:hover::before {
+    transform: translateX(-80%);
+  }
+
+  &.right-text:hover::before {
+    transform: translateX(80%);
+  }
+
+
+  .card-title {
+    position: relative;
+    display: inline-block;
+    color: #ff007a;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  // === CONTENIDO DE TEXTO ===
+  .card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #eee;
+    z-index: 1000;
+
+    h3 {
+      margin-bottom: 0.5rem;
+      color: #ff007a;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .card-button {
+      margin-top: 2rem;
+      align-self: center;
+      background-color: transparent;
+      border: 1px solid #ff007a;
+      color: #ff007a;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #ff007a;
+        color: #fff;
+      }
+    }
+  }
+
+  // === GIF ANIMADO ===
+  .card-gif {
+    flex: 0 0 320px;
+    max-width: 320px;
+    padding-bottom: 0.5rem;
+    box-sizing: border-box;
+
+    img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+      box-shadow: 0 0 8px rgba(255, 0, 122, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      animation: breathe 3s ease-in-out infinite;
+    }
+  }
+
+}
+
+.card.left-text .card-gif { padding-right: 0.75rem; }
+.card.right-text .card-gif { padding-left: 0.75rem; }
+.card.left-text .card-text { padding-left: 0.5rem; }
+.card.right-text .card-text { padding-right: 0.5rem; }
+
+#banner{
+
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+}
+
+.spark {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(0, 0);
+  transform-style: preserve-3d;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff4ca8;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 3px #ff4ca8);
+
+  animation: spark-flicker 1.5s infinite ease-in-out alternate;
+}

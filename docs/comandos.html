@@ -1,136 +1,356 @@
 ---
 layout: default
 title: Comandos
+description: "Lopple Commands"
+keywords: "Lopple, commands, Discord, Splatoon 3, tournaments"
 ---
-<main>
-  <section id="comandos">
-    <h1 class="title1" id="commands">Comandos disponibles</h1>
 
-    <div class="card left-text" id="purgeall">
+<main data-i18n-prefix="comandos">
+
+  <!-- Sección de comandos para todos los usuarios -->
+  <section id="comandos-publicos" data-i18n-prefix="publicos" tabindex="-1">
+    <h1 class="title2" data-i18n="titulo">Comandos para todos</h1>
+
+    <div class="cards-container">
+
+      <div
+        class="card right-text"
+        id="register_team"
+        role="region"
+        aria-labelledby="register_team-title"
+        aria-describedby="register_team-desc"
+        data-i18n-prefix="register_team"
+      >
         <div class="card-text">
-          <h3 class="card-title"><code>/purgeall</code></h3>
-          <p>Elimina todos los mensajes del canal donde se ejecuta.</p>
-          <li><strong>Uso:</strong> <code>/purgeall</code></li>
-          <li><strong>Permisos:</strong> Administrador o Gestionar mensajes</li>
-          <a href="comandos.html#ejemplo" class="card-button">Ver comando</a>
+          <h3 id="register_team-title" class="card-title">
+            <code data-i18n="titulo">/register_team</code>
+          </h3>
+          <p id="register_team-desc" data-i18n="descripcion">
+            Registra tu equipo con al menos un miembro.
+          </p>
+          <ul>
+            <li>
+              <strong data-i18n="uso_label">Uso:</strong>
+              <code data-i18n="uso_valor">
+                /register_team team_name:"Nombre" captain:"@usuario" [player_2:"@usuario" ...]
+              </code>
+            </li>
+            <li>
+              <strong data-i18n="requisitos_label">Requisitos:</strong>
+              <span data-i18n="requisitos_valor">Ninguno</span>
+            </li>
+          </ul>
         </div>
         <div class="card-gif">
-          <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
-        </div>   
-    </div>
-
-    <div class="card right-text" id="delete_registrers">
-      <div class="card-text">
-        <h3 class="card-title"><code>/delete_registrers</code></h3>
-        <p>Elimina todos los mensajes del canal actual.</p>
-        <li><strong>Uso:</strong> <code>/delete_registrers</code></li>
-        <li><strong>Permisos:</strong> Administrador o Gestionar mensajes</li>
-        <a href="comandos.html#ejemplo" class="card-button">Ver comando</a>
+          <img
+            src="assets/crimson.gif"
+            alt="Formulario de registro de equipo con /register_team"
+          />
+        </div>
       </div>
-      <div class="card-gif">
-        <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
-      </div>
-    </div>
 
-    <div class="card left-text" id="change_extrapulls">
-      <div class="card-text">
-        <h3 class="card-title"><code>/change_extrapulls</code></h3>
-        <p>Cambia , suma , resta o resetea las extra pulls de un equipo concreto</p>
-        <li><strong>Uso:</strong> <code>/change_extrapulls</code></li>
-        <li><strong>Permisos:</strong> TO</li>
-        <a href="comandos.html#ejemplo" class="card-button">Ver comando</a>
-      </div>
-      <div class="card-gif">
-        <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
-      </div>    
-    </div>
-
-    <div class="card right-text" id="round_pull">
-      <div class="card-text">
-        <h3 class="card-title"><code>/round_pull</code></h3>
-        <p>El bot te da 10 armas para jugar</p>
-        <li><strong>Uso:</strong> <code>/round_pull</code></li>
-        <li><strong>Requisitos:</strong> Estar registrado habiendo usado /register_team</li>
-        <a href="comandos.html#register_team" class="card-button">Ver /register_team</a>
-      </div>
-      <div class="card-gif">
-        <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
-      </div> 
-    </div>
-
-    <div class="card left-text" id="extrapull">
-      <div class="card-text">
-        <h3 class="card-title"><code>/extrapull</code></h3>
-        <p>Usa una extrapull (te resta -1 en el contador de extrapulls) para otra pulls de 10 armas.</p>
-        <li><strong>Uso:</strong> <code>/extrapull</code></li>
-        <li><strong>Permisos:</strong> TO</li>
-        <a href="comandos.html#ejemplo" class="card-button">Ver comando</a>
-      </div>
-      <div class="card-gif">
-        <img src="assets/crimson.gif" alt="Animación mostrando ejemplo 1" />
-      </div> 
-    </div>
-
-    <div class="comando">
-      <h3 id="extra_pull"><code>/extra_pull</code></h3>
-      <p>Hace un pull adicional para un equipo con extra pulls.</p>
-      <ul>
-        <li><strong>Uso:</strong> <code>/extra_pull equipo: Nombre</code></li>
-        <li><strong>Permisos:</strong> Administrador</li>
-      </ul>
-    </div>
-
-    <div class="comando">
-      <h3 id="test_pull"><code>/test_pull</code></h3>
-      <p>Simula un pull sin afectar los registros.</p>
-      <ul>
-        <li><strong>Uso:</strong> <code>/test_pull</code></li>
-        <li><strong>Permisos:</strong> Todos</li>
-      </ul>
-    </div>
-
-    <div class="comando">
-      <h3 id="register_team"><code>/register_team</code></h3>
-      <p>Registra un nuevo equipo en el sistema.</p>
-      <ul>
-        <li><strong>Uso:</strong> <code>/register_team nombre: "Nombre del equipo"</code></li>
-        <li><strong>Permisos:</strong> Administrador</li>
-      </ul>
-    </div>
-
-    <div class="comando">
-      <h3 id="edit_registered_teams"><code>/edit_registered_teams</code></h3>
-      <p>Edita un equipo registrado.</p>
-      <ul>
-        <li><strong>Uso:</strong> <code>/edit_registered_teams equipo: "Nombre" campo: "valor"</code></li>
-        <li><strong>Permisos:</strong> Administrador</li>
-      </ul>
-    </div>
-
-    <div class="comando">
-      <h3 id="add_member_team"><code>/add_member_team</code></h3>
-      <p>Añade un miembro a un equipo existente.</p>
-      <ul>
-        <li><strong>Uso:</strong> <code>/add_member_team equipo: "Nombre" usuario: @usuario</code></li>
-        <li><strong>Permisos:</strong> Administrador</li>
-      </ul>
-    </div>
-
-
-  <section id="documentacion" aria-label="Documentación adicional y ejemplos visuales">
-      <h2 class="title1">Documentación extra</h2>
-      <p>Aquí se mostrarán ejemplos visuales del funcionamiento del bot, cómo configurar un equipo, usar comandos y aprovechar al máximo sus funcionalidades.</p>
-
-      <div class="card right-text">
+      <div
+        class="card left-text"
+        id="add_member_team"
+        role="region"
+        aria-labelledby="add_member_team-title"
+        aria-describedby="add_member_team-desc"
+        data-i18n-prefix="add_member_team"
+      >
         <div class="card-text">
-          <h3>Título del ejemplo 2</h3>
-          <p>Explicación formal del contenido del gif que está a la izquierda.</p>
+          <h3 id="add_member_team-title" class="card-title">
+            <code data-i18n="titulo">/add_member_team</code>
+          </h3>
+          <p id="add_member_team-desc" data-i18n="descripcion">
+            Añade un miembro a tu equipo.
+          </p>
+          <ul>
+            <li>
+              <strong data-i18n="uso_label">Uso:</strong>
+              <code data-i18n="uso_valor">
+                /add_member_team team:"Nombre del equipo" usuario:"@usuario"
+              </code>
+            </li>
+            <li>
+              <strong data-i18n="requisitos_label">Requisitos:</strong>
+              <span data-i18n="requisitos_valor">
+                Haberse registrado un equipo con /register_team
+              </span>
+            </li>
+          </ul>
+          <a href="comandos.html#register_team" class="card-button" data-i18n="ver_registro">
+            Ver /register_team
+          </a>
         </div>
         <div class="card-gif">
-          <img src="assets/lumiere.gif" alt="Animación mostrando ejemplo 2" />
+          <img
+            src="assets/crimson.gif"
+            alt="Ejemplo de uso de /add_member_team añadiendo miembro"
+          />
         </div>
       </div>
 
+      <div
+        class="card left-text"
+        id="round_pull"
+        role="region"
+        aria-labelledby="round_pull-title"
+        aria-describedby="round_pull-desc"
+        data-i18n-prefix="round_pull"
+      >
+        <div class="card-text">
+          <h3 id="round_pull-title" class="card-title">
+            <code data-i18n="titulo">/round_pull</code>
+          </h3>
+          <p id="round_pull-desc" data-i18n="descripcion">
+            El bot proporciona 10 armas para jugar.
+          </p>
+          <ul>
+            <li>
+              <strong data-i18n="uso_label">Uso:</strong>
+              <code data-i18n="uso_valor">/round_pull</code>
+            </li>
+            <li>
+              <strong data-i18n="requisitos_label">Requisitos:</strong>
+              <span data-i18n="requisitos_valor">
+                Haberse registrado un equipo con /register_team
+              </span>
+            </li>
+          </ul>
+          <a href="comandos.html#register_team" class="card-button" data-i18n="ver_registro">
+            Ver /register_team
+          </a>
+        </div>
+        <div class="card-gif">
+          <img
+            src="assets/crimson.gif"
+            alt="Demostración del comando /round_pull mostrando 10 armas"
+          />
+        </div>
+      </div>
+
+      <div
+        class="card right-text"
+        id="extrapull"
+        role="region"
+        aria-labelledby="extrapull-title"
+        aria-describedby="extrapull-desc"
+        data-i18n-prefix="extrapull"
+      >
+        <div class="card-text">
+          <h3 id="extrapull-title" class="card-title">
+            <code data-i18n="titulo">/extrapull</code>
+          </h3>
+          <p id="extrapull-desc" data-i18n="descripcion">
+            Consume una extra pull para obtener otras 10 armas.
+          </p>
+          <ul>
+            <li>
+              <strong data-i18n="uso_label">Uso:</strong>
+              <code data-i18n="uso_valor">/extrapull</code>
+            </li>
+            <li>
+              <strong data-i18n="requisitos_label">Requisitos:</strong>
+              <span data-i18n="requisitos_valor">
+                Tener al menos una extra pull y estar registrado con /register_team
+              </span>
+            </li>
+          </ul>
+          <a href="comandos.html#register_team" class="card-button" data-i18n="ver_registro">
+            Ver /register_team
+          </a>
+        </div>
+        <div class="card-gif">
+          <img
+            src="assets/crimson.gif"
+            alt="Ejemplo del comando /extrapull mostrando uso de extra pull"
+          />
+        </div>
+      </div>
+
+      <div
+        class="card left-text"
+        id="test_pull"
+        role="region"
+        aria-labelledby="test_pull-title"
+        aria-describedby="test_pull-desc"
+        data-i18n-prefix="test_pull"
+      >
+        <div class="card-text">
+          <h3 id="test_pull-title" class="card-title">
+            <code data-i18n="titulo">/test_pull</code>
+          </h3>
+          <p id="test_pull-desc" data-i18n="descripcion">
+            Obtén 10 armas como prueba para ver el funcionamiento de /round_pull.
+          </p>
+          <ul>
+            <li>
+              <strong data-i18n="uso_label">Uso:</strong>
+              <code data-i18n="uso_valor">/test_pull</code>
+            </li>
+            <li>
+              <strong data-i18n="requisitos_label">Requisitos:</strong>
+              <span data-i18n="requisitos_valor">Ninguno</span>
+            </li>
+          </ul>
+          <a href="comandos.html#round_pull" class="card-button" data-i18n="ver_round_pull">
+            Ver /round_pull
+          </a>
+        </div>
+        <div class="card-gif">
+          <img
+            src="assets/crimson.gif"
+            alt="Visualización de armas generadas por /test_pull"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección de comandos para organizadores del torneo -->
+  <section id="comandos-admin" data-i18n-prefix="admin" tabindex="-1">
+    <h1 class="title2" data-i18n="titulo">Comandos para organizadores del torneo (TO)</h1>
+
+    <div class="cards-container">
+
+      <div
+        class="card right-text"
+        id="purgeall"
+        role="region"
+        aria-labelledby="purgeall-title"
+        aria-describedby="purgeall-desc"
+        data-i18n-prefix="purgeall"
+      >
+        <div class="card-text">
+          <h3 id="purgeall-title" class="card-title">
+            <code data-i18n="titulo">/purgeall</code>
+          </h3>
+          <p id="purgeall-desc" data-i18n="descripcion">
+            Elimina todos los mensajes del canal actual.
+          </p>
+          <ul>
+            <li>
+              <strong data-i18n="uso_label">Uso:</strong>
+              <code data-i18n="uso_valor">/purgeall</code>
+            </li>
+            <li>
+              <strong data-i18n="requisitos_label">Requisitos:</strong>
+              <span data-i18n="requisitos_valor">Ser TO</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card-gif">
+          <img
+            src="assets/crimson.gif"
+            alt="Acción de /purgeall limpiando canal"
+          />
+        </div>
+      </div>
+
+      <div
+        class="card left-text"
+        id="delete_registers"
+        role="region"
+        aria-labelledby="delete_registers-title"
+        aria-describedby="delete_registers-desc"
+        data-i18n-prefix="delete_registers"
+      >
+        <div class="card-text">
+          <h3 id="delete_registers-title" class="card-title">
+            <code data-i18n="titulo">/delete_registers</code>
+          </h3>
+          <p id="delete_registers-desc" data-i18n="descripcion">
+            Elimina todos los registros del canal actual.
+          </p>
+          <ul>
+            <li>
+              <strong data-i18n="uso_label">Uso:</strong>
+              <code data-i18n="uso_valor">/delete_registers</code>
+            </li>
+            <li>
+              <strong data-i18n="requisitos_label">Requisitos:</strong>
+              <span data-i18n="requisitos_valor">Ser TO</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card-gif">
+          <img
+            src="assets/crimson.gif"
+            alt="Ejemplo de /delete_registers eliminando registros"
+          />
+        </div>
+      </div>
+
+      <div
+        class="card right-text"
+        id="change_extrapulls"
+        role="region"
+        aria-labelledby="change_extrapulls-title"
+        aria-describedby="change_extrapulls-desc"
+        data-i18n-prefix="change_extrapulls"
+      >
+        <div class="card-text">
+          <h3 id="change_extrapulls-title" class="card-title">
+            <code data-i18n="titulo">/change_extrapulls</code>
+          </h3>
+          <p id="change_extrapulls-desc" data-i18n="descripcion">
+            Modifica (suma, resta o resetea) las extra pulls de un equipo concreto.
+          </p>
+          <ul>
+            <li>
+              <strong data-i18n="uso_label">Uso:</strong>
+              <code data-i18n="uso_valor">/change_extrapulls</code>
+            </li>
+            <li>
+              <strong data-i18n="requisitos_label">Requisitos:</strong>
+              <span data-i18n="requisitos_valor">Ser TO</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card-gif">
+          <img
+            src="assets/crimson.gif"
+            alt="Demostración de /change_extrapulls ajustando pulls"
+          />
+        </div>
+      </div>
+
+      <div
+        class="card left-text"
+        id="edit_registered_teams"
+        role="region"
+        aria-labelledby="edit_registered_teams-title"
+        aria-describedby="edit_registered_teams-desc"
+        data-i18n-prefix="edit_registered_teams"
+      >
+        <div class="card-text">
+          <h3 id="edit_registered_teams-title" class="card-title">
+            <code data-i18n="titulo">/edit_registered_teams</code>
+          </h3>
+          <p id="edit_registered_teams-desc" data-i18n="descripcion">
+            Edita los equipos que han sido registrados previamente.
+          </p>
+          <ul>
+            <li>
+              <strong data-i18n="uso_label">Uso:</strong>
+              <code data-i18n="uso_valor">/edit_registered_teams</code>
+            </li>
+            <li>
+              <strong data-i18n="requisitos_label">Requisitos:</strong>
+              <span data-i18n="requisitos_valor">Ser TO</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card-gif">
+          <img
+            src="assets/crimson.gif"
+            alt="Ejemplo de /edit_registered_teams modificando equipo"
+          />
+        </div>
+      </div>
+
+    </div>
   </section>
 
 </main>

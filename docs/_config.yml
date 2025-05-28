@@ -1,7 +1,21 @@
-title: Lopple
-description: Mi sitio web con Jekyll y GitHub Pages
-baseurl: "/Lopple"        
+
+# Título y descripción globales (se usan en <meta> si la página no define las suyas)
+title: "Lopple – Bot oficial del Torneo Stellaris Phantasm de Splatoon 3"
+description: "Gestiona el torneo, te da armas, lleva la cuenta de las extra pulls que tiene tu equipo, etc."
+keywords: "Lopple, bot Discord, Splatoon, torneos, automatización, competitivo, Ryro, Neus"
+author: "Ryro"
+
+# URL base y ruta
 url: "https://ryro20.github.io"
+baseurl: "/Lopple"
+
+# Imagen por defecto para Open Graph y Twitter
+og_image: "/Lopple/assets/banner.png"
+
+# Usuario de Twitter (sin arroba)
+twitter_username: "ryro20"
+
+# Tema y SASS
 theme: minima
 sass:
   sass_dir: assets/css

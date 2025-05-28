@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  const OFFSET = 200;
+  const OFFSET = 150;
 
   function fadeIn() {
     return new Promise((resolve) => {
@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = document.getElementById(hash);
     if (!target) return;
 
-    const OFFSET = 200;
     const targetPosition = target.getBoundingClientRect().top + window.scrollY - OFFSET;
 
     window.scrollTo({ top: targetPosition, behavior: 'smooth' });

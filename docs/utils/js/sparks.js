@@ -1,17 +1,21 @@
-
-
 function createSparksOnElement(container) {
   if (!container) return;
 
-  const minSparks = 40;
-  const maxSparks = 50;
+  const minSparks = 10;
+  const maxSparks = 20;
   const count = Math.floor(Math.random() * (maxSparks - minSparks + 1)) + minSparks;
 
   container.querySelectorAll('.spark').forEach(s => s.remove());
 
   const width = container.clientWidth;
   const height = container.clientHeight;
-  const margin = 20;
+  const margin = 25;
+
+  // Asegura posición relativa
+  const computedStyle = window.getComputedStyle(container);
+  if (computedStyle.position === 'static') {
+    container.style.position = 'relative';
+  }
 
   for (let i = 0; i < count; i++) {
     const spark = document.createElement('span');
@@ -22,6 +26,9 @@ function createSparksOnElement(container) {
 
     spark.style.left = `${x}px`;
     spark.style.top = `${y}px`;
+    spark.dataset.x = x;
+    spark.dataset.y = y;
+
     spark.style.animationDelay = `${Math.random() * 2}s`;
 
     container.appendChild(spark);
@@ -29,7 +36,7 @@ function createSparksOnElement(container) {
   }
 }
 
-function animateSpark(el, margin = 20) {
+function animateSpark(el, margin) {
   let posX = parseFloat(el.style.left);
   let posY = parseFloat(el.style.top);
 
@@ -60,8 +67,11 @@ function animateSpark(el, margin = 20) {
       directionY = -Math.abs(directionY);
     }
 
-    el.style.left = posX + 'px';
-    el.style.top = posY + 'px';
+    el.style.left = `${posX}px`;
+    el.style.top = `${posY}px`;
+
+    el.dataset.x = posX;
+    el.dataset.y = posY;
 
     requestAnimationFrame(move);
   }
@@ -69,14 +79,21 @@ function animateSpark(el, margin = 20) {
   move();
 }
 
-// Para todas las .card-title
+
+
+// Ejecutar al cargar DOM
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.card').forEach(card => {
     createSparksOnElement(card);
   });
+
+  const cta = document.querySelector('.cta-section');
+  if (cta) createSparksOnElement(cta);
+
+  const banner = document.getElementById('banner');
+  if (banner) createSparksOnElement(banner);
+
+  const ico = document.querySelector('.stellaris-phantasm__header');
+  if (ico) createSparksOnElement(ico);
+  
 });
-
-// Para otras secciones individuales
-createSparksOnElement(document.querySelector('.cta-section'));
-
-createSparksOnElement(document.getElementById('banner'));
