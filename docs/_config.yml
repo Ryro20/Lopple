@@ -10,7 +10,7 @@ url: "https://ryro20.github.io"
 baseurl: "/Lopple"
 
 # Imagen por defecto para Open Graph y Twitter
-og_image: "/Lopple/assets/banner.png"
+og_image: "https://ryro20.github.io/Lopple/assets/banner.png"
 
 # Usuario de Twitter (sin arroba)
 twitter_username: "ryro20"
