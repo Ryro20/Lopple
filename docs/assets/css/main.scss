@@ -1,19 +1,19 @@
 ---
 ---
 
-@import 'variables';
-@import 'base';
-@import 'layout';
-@import 'sidebar';
+@import 'variables'; //no hace falta
+@import 'base'; //responsive hecho
+@import 'layout'; //responsive hecho
 @import 'responsive';
+@import 'sidebar'; //responsive hecho
 @import 'keyframes';
-@import 'footer';
-@import 'commands';
-@import 'titles';
-@import 'images';
-@import 'lightbox';
-@import 'cta';
-@import 'social';
-@import 'faq';
-@import 'legal';
-@import 'torneo';
+@import 'footer'; //responsive hecho
+@import 'commands'; //responsive hecho
+@import 'titles'; //responsive hecho
+@import 'images'; // X
+@import 'lightbox'; //responsive hecho
+@import 'cta'; //responsive hecho
+@import 'social'; //responsive hecho
+@import 'faq'; //responsive hecho
+@import 'legal'; //responsive hecho
+@import 'torneo'; 

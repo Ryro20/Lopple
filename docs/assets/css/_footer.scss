@@ -75,28 +75,6 @@ footer {
     user-select: none;
   }
 
-  @media (max-width: 600px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    nav[aria-label="Enlaces del pie de página"],
-    .legal,
-    small {
-      margin-left: 0;
-      text-align: center;
-      flex: none;
-      width: 100%;
-    }
-
-    .footer-links {
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-  }
 }
 
 .sidebar.hidden ~ footer {

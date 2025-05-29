@@ -85,6 +85,7 @@ $bar-gap: 13px;
 
 .sidebar {
   position: fixed;
+  will-change: transform;
   top: 0px;
   left: 0;
   height: 100vh;

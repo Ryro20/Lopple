@@ -42,8 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateLocalizedTime(lang) {
     const timeEl = document.querySelector(".stellaris-phantasm__time");
-    const eventInMadrid = new Date(Date.UTC(2025, 3, 27, 17, 0, 0)); // 19:00 CEST = 17:00 UTC
-    
+    if (!timeEl) return; // No hace nada si el elemento no está
+
+    const eventInMadrid = new Date(Date.UTC(2025, 3, 27, 17, 0, 0));
+
     const formatter = new Intl.DateTimeFormat(lang, {
       weekday: "long",
       hour: "2-digit",
@@ -59,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     timeEl.textContent = text;
   }
+
 
 
   function setLanguage(lang) {

@@ -1,0 +1,452 @@
+// =============================
+// 🌐 _base.scss (html, body, global)
+// =============================
+@include respond-to(sm) {
+  body {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    word-break: break-word;
+    overflow-x: hidden;
+  }
+}
+
+
+// =============================
+// 🏷️ Titles (títulos)
+// =============================
+@include respond-to(sm) {
+  .title1 {
+    font-size: 22px;
+    border-bottom-width: 2px;
+  }
+
+  .title2 {
+    font-size: 22px;
+    border-bottom-width: 2px;
+  }
+}
+
+// =============================
+// 📐 Layout (main layout area)
+// =============================
+@include respond-to(sm) {
+  main.main {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 20px 15px;
+  }
+
+  .sidebar.hidden ~ .main {
+    margin-left: 0;
+    padding: 20px 15px;
+  }
+}
+
+// =============================
+// 🤝 Social
+// =============================
+@include respond-to(sm) {
+  .social-wrapper {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1rem 0;
+  }
+
+  .social-card {
+    min-width: auto; // elimina el mínimo fijo
+    max-width: 100%; // usa todo el ancho posible
+    padding: 1rem;
+    box-shadow: 0 0 8px rgba(255, 0, 122, 0.15);
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    .social-icons li a {
+      font-size: 1rem;
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+
+// ============================
+// 📱 Commands – Responsive
+// ============================
+@include respond-to(sm) {
+  .cards-container {
+    padding: 15px 10px;
+    gap: 2rem;
+  }
+
+  .card {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1rem;
+
+    &.left-text,
+    &.right-text {
+      transform: translateX(0); // Evita desplazamiento lateral en móviles
+    }
+
+    &.left-text::before,
+    &.right-text::before {
+      display: none; // Desactiva efecto brillo en móviles por rendimiento
+    }
+
+    .card-text {
+      padding: 0 !important;
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      .card-button {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    .card-gif {
+      flex: none;
+      max-width: 100%;
+      padding: 0;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+// =============================
+// Sidebar - Responsive (mobile)
+// =============================
+@include respond-to(sm) {
+  .custom-toggle {
+    top: 15px;
+    left: 15px !important; // asegurar posición visible en móvil
+    width: 35px;
+    height: 35px;
+
+    span {
+      width: 30px;
+      height: 3px;
+      box-shadow: 0 0 4px 1px rgba(75, 75, 75, 0.6);
+    }
+
+    &.open span:nth-child(1),
+    &.open span:nth-child(3) {
+      top: 16px !important; // ajustar para la rotación
+    }
+    &.open span:nth-child(2) {
+      display: none; // esconder barra central para mejor efecto
+    }
+  }
+
+  .sidebar {
+    width: 100vw; // usar todo ancho pantalla
+    will-change: transform;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    border-right: none;
+    border-bottom: 5px solid #333;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+    transform: translateX(-100%); // sidebar oculta por defecto en móvil
+    transition: transform 0.5s ease;
+
+    &.hidden {
+      transform: translateX(-100%);
+    }
+
+    &.visible {
+      transform: translateX(0);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1200;
+      background-color: #1e1e1e;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.8);
+    }
+  }
+
+  .logo {
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    margin: 0 auto 1rem;
+  }
+
+  .scrollable {
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .custom-language-selector {
+    font-size: 0.85rem;
+    padding: 0.75rem 0;
+    border-top: none;
+    border-bottom: 2px solid rgba(255, 0, 122, 0.2);
+  }
+
+  .nav-links a {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  .submenu-text {
+    font-size: 0.95rem;
+  }
+
+  .submenu-list {
+    padding-left: 0.5rem;
+  }
+}
+
+// =============================
+// 🔻 Footer
+// =============================
+@include respond-to(sm) {
+  footer {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+    }
+
+    nav[aria-label="Enlaces del pie de página"] {
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+
+    .legal {
+      margin-left: 0;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    small {
+      margin-left: 0;
+      margin-top: 5px;
+      font-size: 0.75rem;
+    }
+  }
+
+  .sidebar.hidden ~ footer {
+    margin-left: 0;
+  }
+}
+
+// ========================
+// 📱 CTA Section
+// ========================
+@include respond-to(sm) {
+  .cta-section {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    border-radius: 0.75rem;
+
+    .cta-content {
+      max-width: 100%;
+    }
+
+    .cta-text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-button {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.5rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .feature-list li {
+    font-size: 0.95rem;
+    padding-left: 1.2rem;
+  }
+
+  .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
+
+// =============================
+// ❓ FAQ
+// =============================
+@include respond-to(sm) {
+  .faq-list {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+
+    .faq-question {
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+
+      .faq-icon {
+        margin-left: 0.75rem;
+      }
+    }
+
+    .faq-answer {
+      padding: 0 1.2rem;
+
+      p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      &.open {
+        padding-bottom: 0.75rem;
+      }
+    }
+  }
+}
+
+
+// =============================
+// 🖼️ Lightbox
+// =============================
+@include respond-to(sm) {
+  #lightbox {
+    img {
+      max-width: 95vw;
+      max-height: 70vh;
+      border-radius: 4px;
+    }
+
+    button#lightbox-close {
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// =============================
+// ⚖️ Legal
+// =============================
+@include respond-to(sm) {
+  .legal-nav {
+    padding: 1rem;
+    flex-direction: column;
+
+    ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    li {
+      text-align: left;
+    }
+
+    a {
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  section[id^="privacidad"],
+  section[id^="cookies"],
+  section[id^="aviso_legal"] {
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// =============================
+// 📱 Torneo - Responsive
+// =============================
+@include respond-to(sm) {
+  .stellaris-phantasm {
+    padding: 1rem;
+
+    &__header {
+      padding: 1.5rem 0.75rem;
+
+      &-icon {
+        width: 70px;
+      }
+
+      &-title {
+        font-size: 1.75rem;
+      }
+
+      &-subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    &__section {
+      padding: 1rem;
+
+      &-title {
+        font-size: 1.25rem;
+      }
+
+      &__collapsible {
+        margin: 0.75rem 0;
+
+        &-summary {
+          padding: 0.5rem 0.75rem;
+          font-size: 1rem;
+        }
+
+        &-content {
+          padding: 0.75rem 1rem;
+
+          ul {
+            margin-left: 0.5rem;
+          }
+
+          dl {
+            dt {
+              margin-top: 0.4rem;
+            }
+
+            dd {
+              margin: 0 0 0.75rem 0.75rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__link {
+      font-size: 0.95rem;
+    }
+
+    &__time {
+      font-size: 0.95rem;
+    }
+  }
+}

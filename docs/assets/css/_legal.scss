@@ -60,14 +60,3 @@ section[id^="aviso_legal"] {
   }
 }
 
-/* Responsive móvil: menú vertical */
-@media (max-width: 600px) {
-  .legal-nav ul {
-    flex-direction: column;
-  }
-
-  .legal-nav li {
-    flex: none;
-    text-align: left;
-  }
-}
