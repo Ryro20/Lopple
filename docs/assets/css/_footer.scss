@@ -1,6 +1,5 @@
 footer {
-  margin-left: calc(var(--sidebar-width) + var(--sidebar-margin-left));
-  margin-right: var(--sidebar-margin-right);
+  margin-left: var(--sidebar-width);
   background-color: #121212;
   color: #bbb;
   font-size: 0.9rem;
@@ -78,5 +77,5 @@ footer {
 }
 
 .sidebar.hidden ~ footer {
-  margin-left: var(--sidebar-margin-left);
+  margin-left: 0px;
 }

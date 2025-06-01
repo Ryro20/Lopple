@@ -62,7 +62,7 @@
       "q2": "¿Quién puede participar?",
       "a2": "Cualquier jugador de Splatoon 3 con una cuenta de Discord puede inscribirse.",
       "q3": "¿Cómo me inscribo?",
-      "a3": "Podrás inscribirte a través de la web de <a href='https://sendou.ink/calendar?tournaments=true' target='_blank' rel='noopener noreferrer'>Sendou.ink</a>.",
+      "a3": "Podrás inscribirte a través de la web de <a href=\"https://sendou.ink\" target=\"_blank\" class=\"enlace-destacado\">Sendou.ink</a>.",
       "q4": "¿Dónde puedo ver los equipos?",
       "a4": "En la sección “Equipos” del torneo o en el servidor de discord"
     },
@@ -250,7 +250,7 @@
     "copyright": "© 2025 Lopple Bot. Todos los derechos reservados.",
     "home": "Inicio",
     "commands": "Comandos",
-    "docs": "Documentación",
+    "docs": "Torneo",
     "discord": "Discord",
     "github": "GitHub",
     "privacy": "Política de Privacidad",

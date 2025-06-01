@@ -11,3 +11,14 @@ main.main {
   margin-left: var(--sidebar-margin-right);
   padding: 40px 20px;
 }
+
+.enlace-destacado {
+  font-weight: bold;
+  color: #FF007A;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.enlace-destacado:hover {
+  color: #ff338f; // tono más claro o animado al pasar el ratón
+}

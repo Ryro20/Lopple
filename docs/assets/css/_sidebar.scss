@@ -4,6 +4,7 @@ $bar-gap: 13px;
 
 .custom-toggle {
   position: fixed;
+  z-index: 11;
   top: 25px;
   left: var(--toggle-visible);
   width: 40px;
@@ -86,6 +87,7 @@ $bar-gap: 13px;
 .sidebar {
   position: fixed;
   will-change: transform;
+  z-index: 10;
   top: 0px;
   left: 0;
   height: 100vh;
@@ -280,10 +282,17 @@ $bar-gap: 13px;
 .submenu-link {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: -5px;
+  justify-content: left;
   width: 100%;
-  gap: 0.5rem;
+
+}
+
+.submenu-link a {
+  flex: 1;           /* Ocupa todo el espacio posible */
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 .submenu-text {
@@ -299,7 +308,12 @@ $bar-gap: 13px;
   color: #ccc;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.7s ease;
+  transition: transform 0.7s ease , color 0.3s;
+
+  &:hover {
+    color: #ff3399;
+  }
+
 }
 
 .submenu-list {
