@@ -5,8 +5,6 @@
 *.scss linguist-detectable=true
 *.js linguist-detectable=true
 *.json linguist-detectable=true
-*.md linguist-documentation=false
-*.md linguist-detectable=true
 
 
 # Forzar la detección de lenguajes en la carpeta docs/
