@@ -1,24 +1,11 @@
-# Forzar que se detecten TODOS estos tipos de archivo en cualquier carpeta
+# Forzar la detección de lenguajes en archivos específicos
 *.py linguist-detectable=true
-*.js linguist-detectable=true
-*.ts linguist-detectable=true
 *.html linguist-detectable=true
 *.css linguist-detectable=true
 *.scss linguist-detectable=true
+*.js linguist-detectable=true
 *.json linguist-detectable=true
-*.md linguist-detectable=true
-*.yml linguist-detectable=true
-*.sh linguist-detectable=true
-*.bat linguist-detectable=true
-*.xml linguist-detectable=true
-*.ini linguist-detectable=true
 
-# forzar rutas específicas
-**/*.scss linguist-detectable=true
-**/*.css linguist-detectable=true
-**/*.html linguist-detectable=true
-
-# desactivar la detección de librerías externas
-node_modules/** linguist-vendored
-vendor/** linguist-vendored
-assets/vendor/** linguist-vendored
+# Forzar la detección de lenguajes en la carpeta docs/
+docs/** linguist-detectable=true
+docs/** -linguist-documentation
