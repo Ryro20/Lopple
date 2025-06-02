@@ -5,7 +5,9 @@
 *.scss linguist-detectable=true
 *.js linguist-detectable=true
 *.json linguist-detectable=true
-*.md linguist-language=Markdown
+*.md linguist-documentation=false
+*.md linguist-detectable=true
+
 
 # Forzar la detección de lenguajes en la carpeta docs/
 docs/** linguist-detectable=true
