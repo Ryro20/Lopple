@@ -352,3 +352,35 @@ $bar-gap: 13px;
 .submenu-list li a:hover {
   color: #fff;
 }
+
+
+
+@include respond-to(xs){
+
+  .custom-toggle{
+
+    top: 5px;
+    left: 5px;    
+
+      &.closed {
+      left:5px;
+  }
+
+  }
+
+}
+
+@include respond-to(sm){
+
+  .custom-toggle{
+
+    top: 5px;
+    left: 5px;    
+
+      &.closed {
+      left:5px;
+  }
+
+  }
+
+}

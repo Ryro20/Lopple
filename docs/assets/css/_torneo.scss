@@ -22,7 +22,7 @@ $text-muted: #cccccc;
   color: $text-light;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 10px;
 
   /* ============================
@@ -33,7 +33,7 @@ $text-muted: #cccccc;
     margin-bottom: 2rem;
     background: linear-gradient(135deg, hex-to-rgba($accent, 0.3), hex-to-rgba($accent, 0.1));
     border-radius: 12px;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 
     &-icon {
       width: 100px;
@@ -48,16 +48,17 @@ $text-muted: #cccccc;
     &-title {
       font-size: 2.5rem;
       color: $accent;
-      margin: .5rem 0;
+      margin: 0;
       position: relative;
-      z-index: 1000;
+      z-index: 500;
+      
     }
 
     &-subtitle {
       font-size: 1.125rem;
       color: $text-muted;
       position: relative;
-      z-index: 1000;
+      z-index: 500;
     }
   }
 
@@ -67,10 +68,12 @@ $text-muted: #cccccc;
   &__section {
     background: $bg-medium;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1rem;
     margin-bottom: 2rem;
 
     &-title {
+      display: flex; // Necesario para que align-items funcione
+      justify-content: center;
       font-size: 1.75rem;
       color: $accent;
       border-bottom: 2px solid $accent;
@@ -108,8 +111,9 @@ $text-muted: #cccccc;
       padding: 0; /* quitamos overflow: hidden */
 
       &-summary {
-        display: block;
-        padding: .75rem 1rem;
+        display: flex;
+        justify-content: center;
+        padding: 0.75rem;
         background: hex-to-rgba($accent, .1);
         color: $accent;
         font-weight: 600;
@@ -140,7 +144,7 @@ $text-muted: #cccccc;
         }
 
         p {
-          margin: 0.5rem 0;
+          margin: 0.25rem 0;
         }
       }
     }
@@ -162,9 +166,56 @@ $text-muted: #cccccc;
     }
   }
   .stellaris-phantasm__section__collapsible--centered {
-  .stellaris-phantasm__section__collapsible-summary,
-  .stellaris-phantasm__section__collapsible-content {
-    text-align: center;
+    .stellaris-phantasm__section__collapsible-summary,
+    .stellaris-phantasm__section__collapsible-content {
+      text-align: left;
+    }
   }
 }
+
+@include respond-to(sm){
+
+  .stellaris-phantasm__section__collapsible-content {
+
+    ul {
+      list-style: disc;
+      padding-left: 1rem;
+      margin-left: 0;
+    }
+
+    li {
+      font-size: 0.9rem;
+      padding-left: 0;
+      margin-left: 0;
+    }
+  }
+
+  .stellaris-phantasm{
+
+    &__header{
+
+      &-title{
+
+        font-size: 1.3rem;
+        margin: 0
+
+      }
+
+      &-subtitle {
+        font-size: .9rem;
+      }
+
+    }
+
+    &__section {
+
+      &-title {
+        font-size: 1.5rem;
+
+      }
+    
+    }
+  
+  }
+
 }

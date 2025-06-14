@@ -18,7 +18,10 @@ body.fade-in {
 }
 
 body {
+  
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to bottom, rgb(200, 15, 100), #000000);
   color: #ffffff;
@@ -28,7 +31,4 @@ body {
   opacity: 0;
   transition: opacity 0.4s ease;
 }
-
-
-
 

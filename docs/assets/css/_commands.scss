@@ -181,14 +181,6 @@
 .card.left-text .card-text { padding-left: 0.5rem; }
 .card.right-text .card-text { padding-right: 0.5rem; }
 
-#banner{
-
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-
-}
-
 .spark {
   position: absolute;
   pointer-events: none;
@@ -205,3 +197,79 @@
 
   animation: spark-flicker 1.5s infinite ease-in-out alternate;
 }
+
+@include respond-to(sm) {
+
+  .spark {
+    width: 5px;
+    height: 5px;
+  }
+
+  .card.left-text .card-gif { padding-right: 0rem; }
+  .card.right-text .card-gif { padding-left: 0rem; }
+  .card.left-text .card-text { padding-left: 0rem; }
+  .card.right-text .card-text { padding-right: 0rem; }
+
+  .cards-container {
+    padding: 1rem; // mejor ajustado
+  }
+
+    .card {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .card-text {
+      order: 1;
+      width: 100%;
+      max-width: 90ch;
+      margin-bottom: 1rem;
+
+      ul {
+        padding-left: 1rem;
+        margin: 0;
+        list-style: disc;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+        word-break: break-word;
+      }
+
+      code {
+        display: block;
+        width: 100%;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 0.9rem;
+        line-height: 1.3;
+      }
+    }
+
+    .card-gif {
+      order: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 320px;
+      margin: 0rem 0rem 0rem 0rem;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(255, 0, 122, 0.6);
+      }
+    }
+  }
+}
+

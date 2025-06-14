@@ -12,9 +12,9 @@
   
 }
 
-$breakpoint-xs: 480px;
-$breakpoint-sm: 768px;
-$breakpoint-md: 1024px;  
+$breakpoint-xs: 480px;  // móviles pequeños
+$breakpoint-sm: 768px;  // tablets o móviles grandes
+$breakpoint-md: 1024px; // portátiles pequeños
 
 
 @mixin respond-to($breakpoint) {
@@ -26,4 +26,6 @@ $breakpoint-md: 1024px;
     @media (max-width: $breakpoint-md) { @content; }
   }
 }
+
+
 
