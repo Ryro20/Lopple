@@ -54,6 +54,8 @@ def obtener_arma_info(armas_seleccionadas):
         "Authorization": f"token {GITHUB_TOKEN}"
     }
 
+    armas_seleccionadas = {str(i).zfill(3) for i in armas_seleccionadas}
+    index_exclude_zfilled = {str(i).zfill(3) for i in index_exclude}
     encontrados = set()
 
     while page <= max_pages:
@@ -77,18 +79,19 @@ def obtener_arma_info(armas_seleccionadas):
 
             id_str, nombre = sin_extension.split("_", 1)
 
-            try:
-                index = int(id_str)
-            except ValueError:
-                continue
+            # Aseguramos formato tipo '001', '154', etc.
+            id_str = str(int(id_str)).zfill(3)
 
-            nombre = nombre.replace("%20", " ")
-
-            if index in armas_seleccionadas and index not in index_exclude and index not in encontrados:
+            if (
+                id_str in armas_seleccionadas
+                and id_str not in index_exclude_zfilled
+                and id_str not in encontrados
+            ):
+                nombre = nombre.replace("%20", " ")
                 raw_url = url_repository.replace("github.com", "raw.githubusercontent.com").replace("/blob", "") + f"/{filename}"
-                armas_info.append({'index': index, 'name': nombre, 'url': raw_url})
-                encontrados.add(index)
-                print(f"✅ Arma encontrada: {index} - {nombre} - {raw_url}")
+                armas_info.append({'index': id_str, 'name': nombre, 'url': raw_url})
+                encontrados.add(id_str)
+                print(f"✅ Arma encontrada: {id_str} - {nombre} - {raw_url}")
 
         if len(encontrados) == len(armas_seleccionadas):
             break
@@ -97,21 +100,25 @@ def obtener_arma_info(armas_seleccionadas):
 
     print(f"🧪 Se encontraron {len(armas_info)} armas de {len(armas_seleccionadas)} solicitadas")
 
-    if len(armas_info) != len(armas_seleccionadas):
-        print(f"❌ Faltan armas: {set(armas_seleccionadas) - encontrados}")
+    if len(encontrados) != len(armas_seleccionadas):
+        faltantes = armas_seleccionadas - encontrados
+        print(f"❌ Faltan armas: {faltantes}")
         raise Exception("Not all selected weapons could be found in the repository")
 
     return armas_info
 
+
 def obtener_rareza(index):
-    if index in five_percentage_drop:
+    idx_str = str(index).zfill(3)
+    if idx_str in five_percentage_drop:
         return gold_star
-    elif index in twenty_five_percentage_drop:
+    elif idx_str in twenty_five_percentage_drop:
         return purple_star
-    elif index in seventy_percentage_drop:
+    elif idx_str in seventy_percentage_drop:
         return blue_star
     else:
         return "❓ Unknown"
+
 
 def crear_collage(armas_info):
 
@@ -150,15 +157,28 @@ def crear_collage(armas_info):
     for arma in armas_info:
         weapon_img = Image.open(BytesIO(requests.get(arma['url']).content)).convert("RGBA")
 
-        if arma['index'] in five_percentage_drop:
-            star_img = estrellas_cache['gold']
-        elif arma['index'] in twenty_five_percentage_drop:
-            star_img = estrellas_cache['purple']
-        else:
-            star_img = estrellas_cache['blue']
+        idx = str(arma['index']).zfill(3)
 
-        weapon_img.paste(star_img, (5, 5), star_img)
+        print(f"Procesando arma con index {idx}")
+
+        if idx in five_percentage_drop:
+            print("Asignando estrella GOLD")
+            star_img = estrellas_cache['gold']
+        elif idx in twenty_five_percentage_drop:
+            print("Asignando estrella PURPLE")
+            star_img = estrellas_cache['purple']
+        elif idx in seventy_percentage_drop:
+            print("Asignando estrella BLUE")
+            star_img = estrellas_cache['blue']
+        else:
+            print("No se encontró estrella para este índice")
+            star_img = None
+
+        if star_img:
+            weapon_img.paste(star_img, (5, 5), star_img)
+
         imagenes.append(weapon_img)
+
 
     collage = Image.new('RGBA', (columnas * cell_w, filas * cell_h))
     for i, img in enumerate(imagenes):

@@ -23,7 +23,7 @@ def elegir_arma_con_probabilidad(armas_previas, distancia_minima):
         if idx not in armas_previas
         and idx not in index_exclude
         and (
-            not armas_previas or abs(idx - armas_previas[-1]) >= distancia_minima
+            not armas_previas or abs(int(idx) - int(armas_previas[-1])) >= distancia_minima
         )
     ]
 
@@ -37,17 +37,26 @@ def elegir_arma_con_probabilidad(armas_previas, distancia_minima):
 
     return random.choices(posibles_armas, weights=pesos_normalizados, k=1)[0]
 
-def seleccionar_armas(cantidad=cuantity_weapons, distancia_minima = None):
-
+def seleccionar_armas(cantidad=cuantity_weapons, distancia_minima=None):
     if distancia_minima is None:
         distancia_minima = random.randint(*rango_distancia)
     armas_seleccionadas = []
+    armas_set = set()
+
     intentos = 0
+
     while len(armas_seleccionadas) < cantidad:
         if intentos > 100:
             raise Exception("Not enough valid weapons could be selected.")
+        
         nueva_arma = elegir_arma_con_probabilidad(armas_seleccionadas, distancia_minima)
-        if nueva_arma is not None:
-            armas_seleccionadas.append(nueva_arma)
+        
+        if nueva_arma is not None and nueva_arma not in armas_set:
+            armas_seleccionadas.append(int(nueva_arma))  # Lista para mantener orden
+            armas_set.add(nueva_arma)  # Set para evitar duplicados
+        
         intentos += 1
-    return armas_seleccionadas
+
+
+    return list(armas_seleccionadas)
+
