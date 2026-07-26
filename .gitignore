@@ -1,24 +1,33 @@
-# Ignorar archivo con tokens e IDs sensibles
-claves.py
-constantes_pull.py
-style.css
+# ============================================
+# Jekyll build output
+# ============================================
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
 
-# Ignorar archivos zip
-*.zip
+# ============================================
+# Ruby / Bundler
+# ============================================
+.bundle/
+vendor/
 
-# Ignorar carpetas , pycache y archivos compilados de Python
-_site
-__pycache__/
-*.pyc
+# ============================================
+# IDEs y editores
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Ignorar entornos virtuales
-venv/
-.env/
-
-# Ignorar archivos de sistema macOS y Windows
+# ============================================
+# Sistema operativo
+# ============================================
 .DS_Store
 Thumbs.db
 
-# Ignorar archivos de logs y temporales
+# ============================================
+# Logs y temporales
+# ============================================
 *.log
-*.tmp

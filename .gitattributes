@@ -1,12 +1,6 @@
-# Forzar la detección de lenguajes en archivos específicos
-*.py linguist-detectable=true
+# Forzar detección de lenguajes
 *.html linguist-detectable=true
 *.css linguist-detectable=true
 *.scss linguist-detectable=true
 *.js linguist-detectable=true
 *.json linguist-detectable=true
-
-
-# Forzar la detección de lenguajes en la carpeta docs/
-docs/** linguist-detectable=true
-docs/** -linguist-documentation
